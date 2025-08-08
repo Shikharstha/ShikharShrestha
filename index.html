@@ -3,383 +3,311 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shikhar Shrestha - Strategic Technology Leader</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>Shikhar Shrestha | Strategic Technology Leader</title>
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #222222;
+            --primary: #0066ff;
+            --secondary: #f0f4f8;
+            --accent: #00c4ff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            font-size: 18px;
+        }
+        
+        @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        
+        header {
+            padding: 30px 0;
+            position: fixed;
+            width: 100%;
+            background: var(--bg);
+            z-index: 100;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-weight: 700;
+            font-size: 24px;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .hero {
+            padding: 180px 0 100px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: #666;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background: #0052cc;
+            transform: translateY(-2px);
+        }
+        
+        section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+        
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .work-card {
+            background: var(--secondary);
+            border-radius: 10px;
+            padding: 40px;
+            transition: transform 0.3s;
+        }
+        
+        .work-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .work-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .work-card p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .skill {
+            background: var(--bg);
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .about {
+            background: var(--secondary);
+        }
+        
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .about-content p {
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+        }
+        
+        footer {
+            padding: 60px 0;
+            text-align: center;
+            background: var(--text);
+            color: white;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
-        <div class="container header-container">
-            <a href="#" class="logo">Shikhar<span>.</span></a>
-            <div class="mobile-menu">
-                <i class="fas fa-bars"></i>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#value-proposition">Value</a></li>
-                <li><a href="#impact">Impact</a></li>
-                <li><a href="#competencies">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">SHIKHAR SHRESTHA</a>
+                <div class="nav-links">
+                    <a href="#work">Work</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="hero">
-        <div class="container hero-content">
-            <div class="hero-text">
-                <h1>Strategic Technology Leader Driving Enterprise Innovation & Operational Excellence</h1>
-                <p>Transforming complex challenges into scalable solutions through cross-functional leadership and technical fluency.</p>
-                <div class="hero-highlight">
-                    <i class="fas fa-trophy"></i> Delivered 99% defect-free AI solutions saving $750K annually
-                </div>
-                <div class="hero-btns">
-                    <a href="#contact" class="btn">Connect With Me</a>
-                    <a href="#" class="btn btn-outline">Download Resume</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="profile-placeholder">
-                    <i class="fas fa-user-circle"></i>
-                </div>
-                <div class="shape shape-1"></div>
-                <div class="shape shape-2"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Value Proposition -->
-    <section id="value-proposition">
+    <section class="hero">
         <div class="container">
-            <div class="section-header">
-                <h2>My Value Proposition</h2>
-            </div>
-            
-            <div class="value-statement">
-                <p>I empower global organizations to achieve strategic goals by leading high-performing teams in delivering innovative, user-centric technology solutions. My expertise bridges technical execution, operational efficiency, and inclusive leadership.</p>
-            </div>
-            
-            <div class="pillars">
-                <div class="pillar">
-                    <div class="pillar-icon">
-                        <i class="fas fa-chess-king"></i>
-                    </div>
-                    <h3>Strategic Execution</h3>
-                    <p>Turning vision into reality through roadmapping, OKRs & risk management.</p>
-                </div>
-                
-                <div class="pillar">
-                    <div class="pillar-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Cross-Functional Leadership</h3>
-                    <p>Building & motivating global teams (Dev, Product, Ops) for high-impact delivery.</p>
-                </div>
-                
-                <div class="pillar">
-                    <div class="pillar-icon">
-                        <i class="fas fa-lightbulb"></i>
-                    </div>
-                    <h3>Tech-Driven Innovation</h3>
-                    <p>Leveraging AI, Cloud & Data Engineering to solve complex business problems.</p>
-                </div>
-                
-                <div class="pillar">
-                    <div class="pillar-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Operational Excellence</h3>
-                    <p>Applying Lean Six Sigma & Agile to optimize processes & drive efficiency.</p>
-                </div>
-                
-                <div class="pillar">
-                    <div class="pillar-icon">
-                        <i class="fas fa-globe-americas"></i>
-                    </div>
-                    <h3>Inclusive Culture</h3>
-                    <p>Fostering environments where diverse perspectives fuel innovation.</p>
-                </div>
-            </div>
+            <h1>Strategic Technology Leader</h1>
+            <p>Delivering enterprise-scale solutions through innovation, technology, and operational excellence.</p>
+            <a href="#work" class="btn">View My Work</a>
         </div>
     </section>
 
-    <!-- Impact Highlights -->
-    <section id="impact">
+    <section id="work">
         <div class="container">
-            <div class="section-header">
-                <h2>Strategic Impact</h2>
-            </div>
-            
-            <div class="impact-cards">
-                <div class="impact-card">
-                    <div class="card-header">
-                        <h3>Tyson Foods | IT Applications Project/Program Manager</h3>
-                        <p>2023 - Present</p>
-                    </div>
-                    <div class="card-body">
-                        <div class="impact-point">
-                            <h4><i class="fas fa-cogs"></i> AI-Powered Operational Transformation</h4>
-                            <p>Spearheaded global cross-functional team (10+ developers and product owners) to deliver scalable camera vision solutions across production plants.</p>
-                            <div class="impact-metric">99% defect-free rate</div>
-                        </div>
-                        
-                        <div class="impact-point">
-                            <h4><i class="fas fa-chart-bar"></i> Driving Forecasting Accuracy</h4>
-                            <p>Led business and technical teams to enhance order processing system, enabling demand planning and forecasting accuracy.</p>
-                            <div class="impact-metric">$750K annual savings</div>
-                        </div>
-                        
-                        <div class="skills">
-                            <span class="skill">Strategic Leadership</span>
-                            <span class="skill">Global Team Mgmt</span>
-                            <span class="skill">Tech Innovation</span>
-                            <span class="skill">Risk Management</span>
-                        </div>
+            <h2 class="section-title">Selected Work</h2>
+            <div class="work-grid">
+                <div class="work-card">
+                    <h3>Tyson Foods</h3>
+                    <p>Spearheaded global team to deliver AI-powered camera vision solutions achieving 99% defect-free rate.</p>
+                    <div class="skills">
+                        <span class="skill">AI Solutions</span>
+                        <span class="skill">Team Leadership</span>
+                        <span class="skill">Process Optimization</span>
                     </div>
                 </div>
-                
-                <div class="impact-card">
-                    <div class="card-header">
-                        <h3>Tyson Foods | IT Applications Scrum Master</h3>
-                        <p>2022 - 2023</p>
-                    </div>
-                    <div class="card-body">
-                        <div class="impact-point">
-                            <h4><i class="fas fa-sync-alt"></i> Scaling Agile Transformation</h4>
-                            <p>Scaled agile transformation initiatives across product teams in coordination with RTEs, Directors, and VPs.</p>
-                        </div>
-                        
-                        <div class="impact-point">
-                            <h4><i class="fas fa-tachometer-alt"></i> Performance Optimization</h4>
-                            <p>Enhanced team performance by strategically allocating resources efficiently by utilizing agile capacity planning.</p>
-                        </div>
-                        
-                        <div class="impact-point">
-                            <h4><i class="fas fa-check-circle"></i> Delivery Excellence</h4>
-                            <p>Managed 8 data engineers and 5 product owners to deliver analytics features on time.</p>
-                            <div class="impact-metric">95%+ delivery rate</div>
-                        </div>
-                        
-                        <div class="skills">
-                            <span class="skill">Agile Leadership</span>
-                            <span class="skill">Transformation</span>
-                            <span class="skill">Performance Mgmt</span>
-                            <span class="skill">OKR Execution</span>
-                        </div>
+                <div class="work-card">
+                    <h3>Agile Transformation</h3>
+                    <p>Scaled agile initiatives across product teams, achieving 95%+ on-time delivery rate.</p>
+                    <div class="skills">
+                        <span class="skill">Agile</span>
+                        <span class="skill">Scrum</span>
+                        <span class="skill">SAFe</span>
                     </div>
                 </div>
-                
-                <div class="impact-card">
-                    <div class="card-header">
-                        <h3>Creighton University | Project Manager</h3>
-                        <p>2019 - 2021</p>
-                    </div>
-                    <div class="card-body">
-                        <div class="impact-point">
-                            <h4><i class="fas fa-university"></i> University-Wide System Implementation</h4>
-                            <p>Delivered scalable operations management solution with internal and external partners.</p>
-                        </div>
-                        
-                        <div class="impact-point">
-                            <h4><i class="fas fa-user-check"></i> Change Management</h4>
-                            <p>Led UAT and training for university-wide systems implementation.</p>
-                        </div>
-                        
-                        <div class="impact-point">
-                            <h4><i class="fas fa-file-alt"></i> Process Documentation</h4>
-                            <p>Built workflows, user stories, and process documentation using Asana and stakeholder input.</p>
-                        </div>
-                        
-                        <div class="impact-metric">Improved operational accuracy & transparency</div>
-                        
-                        <div class="skills">
-                            <span class="skill">Program Delivery</span>
-                            <span class="skill">Stakeholder Mgmt</span>
-                            <span class="skill">Change Management</span>
-                            <span class="skill">Process Improvement</span>
-                        </div>
+                <div class="work-card">
+                    <h3>University System</h3>
+                    <p>Led implementation of operations management solution improving accuracy and transparency.</p>
+                    <div class="skills">
+                        <span class="skill">Project Management</span>
+                        <span class="skill">Change Management</span>
+                        <span class="skill">Process Documentation</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Core Competencies -->
-    <section id="competencies">
+    <section class="about" id="about">
         <div class="container">
-            <div class="section-header">
-                <h2>Core Competencies</h2>
-            </div>
-            
-            <div class="competencies-container">
-                <div class="competency-categories">
-                    <div class="category">
-                        <h3>Leadership & Strategy</h3>
-                        <ul class="competencies-list">
-                            <li><i class="fas fa-check"></i> Cross-Functional Team Leadership</li>
-                            <li><i class="fas fa-check"></i> People Management</li>
-                            <li><i class="fas fa-check"></i> Stakeholder Engagement (VP+)</li>
-                            <li><i class="fas fa-check"></i> Inclusive Culture Development</li>
-                            <li><i class="fas fa-check"></i> Strategic Communication</li>
-                            <li><i class="fas fa-check"></i> Roadmapping & OKRs</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="category">
-                        <h3>Project & Program Management</h3>
-                        <ul class="competencies-list">
-                            <li><i class="fas fa-check"></i> Agile, Scrum & Waterfall</li>
-                            <li><i class="fas fa-check"></i> Risk Management</li>
-                            <li><i class="fas fa-check"></i> Program Planning</li>
-                            <li><i class="fas fa-check"></i> SDLC & DevOps</li>
-                            <li><i class="fas fa-check"></i> Lean Six Sigma</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="category">
-                        <h3>Technical Fluency</h3>
-                        <ul class="competencies-list">
-                            <li><i class="fas fa-check"></i> API Integration</li>
-                            <li><i class="fas fa-check"></i> Cloud Architecture</li>
-                            <li><i class="fas fa-check"></i> Data Engineering</li>
-                            <li><i class="fas fa-check"></i> UX/UI Principles</li>
-                            <li><i class="fas fa-check"></i> SQL, Python, JavaScript</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="category">
-                        <h3>Tools & Platforms</h3>
-                        <ul class="competencies-list">
-                            <li><i class="fas fa-check"></i> Jira & Confluence</li>
-                            <li><i class="fas fa-check"></i> ServiceNow</li>
-                            <li><i class="fas fa-check"></i> Asana & Airtable</li>
-                            <li><i class="fas fa-check"></i> Power BI & Tableau</li>
-                            <li><i class="fas fa-check"></i> Figma</li>
-                        </ul>
-                    </div>
-                </div>
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <p>Strategic leader with 8+ years of experience delivering enterprise-scale initiatives across innovation, technology, and operations.</p>
+                <p>Proven track record of driving adoption across global teams and delivering impactful, user-centered solutions.</p>
+                <p>Currently pursuing Executive MBA at University of Arkansas (2026).</p>
+                <a href="#contact" class="btn">Get In Touch</a>
             </div>
         </div>
     </section>
 
-    <!-- Education & Credentials -->
-    <section id="education">
-        <div class="container">
-            <div class="section-header">
-                <h2>Education & Credentials</h2>
-            </div>
-            
-            <div class="edu-cred-container">
-                <div class="education-section">
-                    <h3>Education</h3>
-                    
-                    <div class="edu-item">
-                        <div class="edu-title">Executive MBA</div>
-                        <div class="edu-meta">University of Arkansas | Expected 2026</div>
-                        <p>Strategic leadership and business administration program focused on enterprise management.</p>
-                    </div>
-                </div>
-                
-                <div class="credentials-section">
-                    <h3>Certifications</h3>
-                    
-                    <div class="cred-grid">
-                        <div class="cred-item">
-                            <i class="fas fa-medal"></i>
-                            <h4>PMP</h4>
-                            <div class="cred-meta">Project Management Professional</div>
-                        </div>
-                        
-                        <div class="cred-item">
-                            <i class="fas fa-certificate"></i>
-                            <h4>Lean Six Sigma</h4>
-                            <div class="cred-meta">Green Belt</div>
-                        </div>
-                        
-                        <div class="cred-item">
-                            <i class="fas fa-graduation-cap"></i>
-                            <h4>Product Management</h4>
-                            <div class="cred-meta">Cornell University</div>
-                        </div>
-                        
-                        <div class="cred-item">
-                            <i class="fas fa-scroll"></i>
-                            <h4>Certified Scrum Professional</h4>
-                            <div class="cred-meta">PSM-I</div>
-                        </div>
-                        
-                        <div class="cred-item">
-                            <i class="fas fa-rocket"></i>
-                            <h4>SAFe Agile-Scrum</h4>
-                            <div class="cred-meta">Certified</div>
-                        </div>
-                        
-                        <div class="cred-item">
-                            <i class="fas fa-chart-pie"></i>
-                            <h4>Business Intelligence</h4>
-                            <div class="cred-meta">Certified</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Leadership Philosophy -->
-    <section id="philosophy">
-        <div class="container">
-            <div class="philosophy-content">
-                <h2>My Leadership Approach</h2>
-                <p>I believe in empowering high-performing, diverse teams to solve complex problems through collaboration, clear vision, and a relentless focus on user-centered impact.</p>
-                
-                <div class="quote">
-                    "Fostering inclusive environments where psychological safety fuels innovation and drives measurable business outcomes."
-                </div>
-                
-                <a href="#contact" class="btn btn-outline">Connect to Discuss Strategy</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
     <section id="contact">
         <div class="container">
-            <div class="contact-container">
-                <h2>Ready to leverage strategic leadership for your organization?</h2>
-                <p>Let's connect to discuss how I can help drive transformation and deliver impactful solutions for your enterprise.</p>
-                
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>shikarstha@gmail.com</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-mobile-alt"></i>
-                        <span>423.486.6424</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Fayetteville, AR</span>
-                    </div>
-                </div>
+            <h2 class="section-title">Contact</h2>
+            <div style="text-align: center;">
+                <p style="margin-bottom: 30px; font-size: 1.2rem;">Let's discuss how I can help drive transformation for your organization.</p>
+                <a href="mailto:shikarstha@gmail.com" class="btn">Email Me</a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="social-links">
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
+            <p>© 2025 Shikhar Shrestha. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">LinkedIn</a>
+                <a href="#">Twitter</a>
+                <a href="#">GitHub</a>
             </div>
-            <p>&copy; 2023 Shikhar Shrestha. All rights reserved.</p>
+            <p>Fayetteville, AR | 423.486.6424</p>
         </div>
     </footer>
-
-    <script src="function.js"></script>
 </body>
 </html>
