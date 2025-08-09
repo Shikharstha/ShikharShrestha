@@ -28,6 +28,10 @@
             color: var(--light);
             line-height: 1.6;
             overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(17, 34, 64, 0.8) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(17, 34, 64, 0.6) 0%, transparent 20%);
+            background-size: 400px 400px;
         }
         
         body.light-mode {
@@ -37,6 +41,9 @@
             --dark: #ccd6f6;
             --gray: #4a5568;
             --card-bg: #e6f7ff;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(230, 247, 255, 0.8) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(230, 247, 255, 0.6) 0%, transparent 20%);
         }
         
         .container {
@@ -55,10 +62,12 @@
             z-index: 1000;
             padding: 20px 0;
             transition: var(--transition);
+            box-shadow: 0 5px 20px rgba(2, 12, 27, 0.7);
         }
         
         body.light-mode header {
             background-color: rgba(240, 247, 255, 0.85);
+            box-shadow: 0 5px 20px rgba(204, 214, 246, 0.5);
         }
         
         .header-container {
@@ -72,6 +81,21 @@
             font-weight: bold;
             color: var(--secondary);
             text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .logo-icon {
+            color: var(--secondary);
+            font-size: 22px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
         }
         
         nav ul {
@@ -119,11 +143,19 @@
             font-size: 20px;
             transition: var(--transition);
             margin-left: 20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(100, 255, 218, 0.1);
         }
         
         .theme-toggle:hover {
             color: var(--secondary);
             transform: rotate(30deg);
+            background: rgba(100, 255, 218, 0.2);
         }
         
         .mobile-toggle {
@@ -133,6 +165,13 @@
             color: var(--light);
             font-size: 24px;
             cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(100, 255, 218, 0.1);
         }
         
         /* Hero Section */
@@ -141,16 +180,20 @@
             display: flex;
             align-items: center;
             padding: 100px 0 50px;
+            position: relative;
         }
         
         .hero-content {
             max-width: 700px;
+            position: relative;
+            z-index: 2;
         }
         
         .hero h4 {
             color: var(--secondary);
             font-size: 18px;
             margin-bottom: 20px;
+            animation: fadeIn 1s ease;
         }
         
         .hero h1 {
@@ -158,12 +201,14 @@
             margin: 0;
             line-height: 1.1;
             color: var(--light);
+            animation: fadeIn 1.2s ease;
         }
         
         .hero h2 {
             font-size: clamp(30px, 6vw, 60px);
             margin: 10px 0 20px;
             color: var(--gray);
+            animation: fadeIn 1.4s ease;
         }
         
         .hero p {
@@ -171,6 +216,12 @@
             font-size: 18px;
             margin-bottom: 40px;
             color: var(--gray);
+            animation: fadeIn 1.6s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
         .btn {
@@ -185,6 +236,7 @@
             font-weight: bold;
             transition: var(--transition);
             cursor: pointer;
+            animation: fadeIn 1.8s ease;
         }
         
         .btn:hover {
@@ -193,9 +245,21 @@
             box-shadow: 0 10px 20px rgba(100, 255, 218, 0.1);
         }
         
+        .hero-pattern {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50%;
+            max-width: 600px;
+            opacity: 0.1;
+            z-index: 1;
+        }
+        
         /* About Section */
         .section {
             padding: 100px 0;
+            position: relative;
         }
         
         .section-header {
@@ -209,6 +273,18 @@
             color: var(--light);
             white-space: nowrap;
             margin-right: 20px;
+            position: relative;
+        }
+        
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50%;
+            height: 3px;
+            background-color: var(--secondary);
+            border-radius: 3px;
         }
         
         .section-header .line {
@@ -303,22 +379,20 @@
             animation: fadeIn 0.5s ease;
         }
         
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
         .experience-card {
             background-color: var(--card-bg);
             border-radius: 5px;
             padding: 30px;
             margin-bottom: 20px;
             transition: var(--transition);
-            border-left: 2px solid var(--secondary);
+            border-left: 3px solid var(--secondary);
+            position: relative;
+            overflow: hidden;
         }
         
         .experience-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(2, 12, 27, 0.5);
         }
         
         .experience-card h3 {
@@ -338,25 +412,22 @@
             color: var(--gray);
             margin-bottom: 20px;
             display: block;
+            font-style: italic;
         }
         
-        .experience-card ul {
-            list-style: none;
-            padding-left: 20px;
-        }
-        
-        .experience-card ul li {
-            margin-bottom: 10px;
-            position: relative;
-            padding-left: 20px;
+        .experience-card p {
             color: var(--gray);
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 10px;
         }
         
-        .experience-card ul li::before {
-            content: '▹';
-            position: absolute;
-            left: 0;
-            color: var(--secondary);
+        .experience-card .accomplishment {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px dashed var(--gray);
+            color: var(--light);
+            font-weight: bold;
         }
         
         /* Certifications */
@@ -373,10 +444,14 @@
             transition: var(--transition);
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
         
         .cert-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(2, 12, 27, 0.5);
         }
         
         .cert-card::before {
@@ -398,6 +473,14 @@
         .cert-card p {
             color: var(--secondary);
             font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .cert-card .cert-icon {
+            margin-top: auto;
+            font-size: 24px;
+            color: var(--secondary);
+            text-align: right;
         }
         
         /* Contact Section */
@@ -462,6 +545,7 @@
             background-color: var(--secondary);
             color: var(--primary);
             transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(100, 255, 218, 0.3);
         }
         
         .contact-form .form-group {
@@ -519,6 +603,7 @@
             visibility: hidden;
             transition: var(--transition);
             z-index: 99;
+            box-shadow: 0 5px 15px rgba(100, 255, 218, 0.3);
         }
         
         .back-to-top.visible {
@@ -528,7 +613,7 @@
         
         .back-to-top:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(100, 255, 218, 0.3);
+            box-shadow: 0 8px 20px rgba(100, 255, 218, 0.5);
         }
         
         /* Responsive Design */
@@ -545,11 +630,15 @@
             .section-header .line {
                 max-width: 200px;
             }
+            
+            .hero-pattern {
+                opacity: 0.05;
+            }
         }
         
         @media (max-width: 768px) {
             .mobile-toggle {
-                display: block;
+                display: flex;
             }
             
             nav {
@@ -621,7 +710,10 @@
     <!-- Header -->
     <header>
         <div class="container header-container">
-            <a href="#" class="logo">Shikhar<span style="color: var(--secondary);">.</span></a>
+            <a href="#" class="logo">
+                <i class="fas fa-terminal logo-icon"></i>
+                Shikhar
+            </a>
             <button class="mobile-toggle">
                 <i class="fas fa-bars"></i>
             </button>
@@ -650,8 +742,15 @@
                 <h1>Shikhar Shrestha.</h1>
                 <h2>I bring complex ideas to life.</h2>
                 <p>I'm a strategic leader with 8+ years of experience in innovation, technology, and operations. I specialize in leading global teams and building enterprise-scale solutions rooted in real user needs.</p>
-                <a href="#contact" class="btn">Get In Touch</a>
+                <a href="#experience" class="btn">View Experience</a>
             </div>
+        </div>
+        <div class="hero-pattern">
+            <svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                <path d="M300,100 C400,50 500,150 500,300 C500,450 400,550 300,500 C200,450 100,350 100,200 C100,150 200,150 300,100" fill="none" stroke="var(--secondary)" stroke-width="2" opacity="0.5"/>
+                <path d="M300,150 C375,125 450,175 450,300 C450,425 375,475 300,450 C225,425 150,350 150,225 C150,175 225,175 300,150" fill="none" stroke="var(--secondary)" stroke-width="2" opacity="0.5"/>
+                <circle cx="300" cy="300" r="100" fill="none" stroke="var(--secondary)" stroke-width="2" opacity="0.5"/>
+            </svg>
         </div>
     </section>
 
@@ -713,24 +812,17 @@
                     <h3>IT Applications Project/Program Manager</h3>
                     <span class="company">Tyson Foods</span>
                     <span class="date">2023 - Present | Springdale, AR</span>
-                    <ul>
-                        <li>Spearheaded global cross-functional team (10+ developers and product owners) to deliver scalable camera vision solutions across production plants, resulting in 99% defect-free rate and operational efficiency</li>
-                        <li>Owning program planning, road mapping, risk mitigation, and executive communication for 60+ Applications</li>
-                        <li>Leading business and technical team to enhance order processing system, enabling demand planning and forecasting accuracy and saving 750K annually</li>
-                        <li>Managing and leading Global IT team of 10 development engineers and 5 Product Owners/Managers, achieving on-time delivery of project initiatives</li>
-                        <li>Championing strategic communication plans and status updates to stakeholders (VP level)</li>
-                    </ul>
+                    <p>As IT Applications Project/Program Manager at Tyson Foods, I lead global cross-functional teams to deliver enterprise-scale technology solutions. My responsibilities include program planning, roadmapping, risk mitigation, and executive communication for over 60 applications. I spearheaded the development of scalable camera vision solutions across production plants, achieving a 99% defect-free rate and significant operational efficiency improvements.</p>
+                    <p>I lead business and technical teams to enhance the order processing system, enabling accurate demand planning and forecasting that saves $750K annually. Managing a global IT team of 10 development engineers and 5 Product Owners/Managers, I ensure on-time delivery of all project initiatives and production support.</p>
+                    <p class="accomplishment">Key accomplishment: Developed strategic communication plans for VP-level stakeholders that ensured transparency and alignment between product and engineering teams throughout project life cycles.</p>
                 </div>
                 <div class="experience-card">
                     <h3>IT Applications Scrum Master</h3>
                     <span class="company">Tyson Foods</span>
                     <span class="date">2022 - 2023 | Springdale, AR</span>
-                    <ul>
-                        <li>Scaled agile transformation initiatives across product teams in coordination with RTEs, Directors, and VPs</li>
-                        <li>Enhanced team performance by strategically allocating resources efficiently by utilizing agile capacity planning</li>
-                        <li>Facilitated Program Increment planning and sprint ceremonies across multiple teams using Jira and Mural</li>
-                        <li>Managed 8 data engineers and 5 product owners to deliver analytics features on time with over 95% delivery rate</li>
-                    </ul>
+                    <p>In my role as IT Applications Scrum Master, I scaled agile transformation initiatives across product teams in coordination with RTEs, Directors, and VPs. I enhanced team performance through strategic resource allocation using agile capacity planning methodologies. Facilitating Program Increment planning and sprint ceremonies across multiple teams, I utilized tools like Jira and Mural to streamline processes.</p>
+                    <p>I managed 8 data engineers and 5 product owners to deliver analytics features with over 95% on-time delivery. Working closely with Product Owners and Solution Architects, I refined project backlogs for smooth planning and scheduling of features and user stories. I also created performance dashboards and OKRs to drive continuous measurement and visibility.</p>
+                    <p class="accomplishment">Key accomplishment: Implemented agile methodologies that improved team delivery rate by 25% and reduced project cycle times by 15%.</p>
                 </div>
             </div>
             <div class="tab-content" id="macc-content">
@@ -738,11 +830,9 @@
                     <h3>Software Developer/Scrum Master</h3>
                     <span class="company">Mid-America Computer Corporation</span>
                     <span class="date">2021 - 2022 | Omaha, NE</span>
-                    <ul>
-                        <li>Enhanced user experience by implementing search and map features, reducing load times by 2 seconds</li>
-                        <li>Led daily stand-ups, retrospectives, and sprint reviews; tracked velocity and burn-down metrics</li>
-                        <li>Partnered with QA and product owners to ensure quality and timely delivery of .NET web applications</li>
-                    </ul>
+                    <p>At Mid-America Computer Corporation, I served dual roles as both Software Developer and Scrum Master. I enhanced user experience by implementing search and map features that reduced load times by 2 seconds. Leading agile ceremonies including daily stand-ups, retrospectives, and sprint reviews, I tracked velocity and burn-down metrics to optimize team performance.</p>
+                    <p>I partnered with QA teams and product owners to ensure quality and timely delivery of .NET web applications. My technical contributions included developing features that improved system functionality while my Scrum Master responsibilities focused on removing impediments and fostering team collaboration.</p>
+                    <p class="accomplishment">Key accomplishment: Reduced application load times by 2 seconds through optimized search and mapping feature implementations.</p>
                 </div>
             </div>
             <div class="tab-content" id="creighton-content">
@@ -750,11 +840,9 @@
                     <h3>Project Manager</h3>
                     <span class="company">Creighton University</span>
                     <span class="date">2019 - 2021 | Omaha, NE</span>
-                    <ul>
-                        <li>Delivered scalable operations management solution with internal and external partners, improving accuracy and data transparency</li>
-                        <li>Led UAT and training for university-wide systems implementation</li>
-                        <li>Built workflows, user stories, and process documentation using Asana and stakeholder input</li>
-                    </ul>
+                    <p>As Project Manager at Creighton University, I delivered a scalable operations management solution in collaboration with internal and external partners, significantly improving data accuracy and transparency. I led User Acceptance Testing (UAT) and comprehensive training programs for university-wide systems implementation.</p>
+                    <p>My responsibilities included building workflows, developing user stories, and creating detailed process documentation using Asana based on stakeholder input. I managed cross-functional teams to ensure successful deployment of technology solutions that met the diverse needs of the academic community.</p>
+                    <p class="accomplishment">Key accomplishment: Successfully implemented a university-wide system that improved operational efficiency by 30% and data accuracy by 45%.</p>
                 </div>
             </div>
         </div>
@@ -771,26 +859,32 @@
                 <div class="cert-card">
                     <h3>Project Management Professional (PMP)</h3>
                     <p>Project Management Institute</p>
+                    <div class="cert-icon"><i class="fas fa-medal"></i></div>
                 </div>
                 <div class="cert-card">
                     <h3>Lean Six Sigma Green Belt</h3>
                     <p>International Association for Six Sigma Certification</p>
+                    <div class="cert-icon"><i class="fas fa-chart-line"></i></div>
                 </div>
                 <div class="cert-card">
                     <h3>Product Management</h3>
                     <p>Cornell University</p>
+                    <div class="cert-icon"><i class="fas fa-box-open"></i></div>
                 </div>
                 <div class="cert-card">
                     <h3>Certified Scrum Professional (PSM-I)</h3>
                     <p>Scrum.org</p>
+                    <div class="cert-icon"><i class="fas fa-tasks"></i></div>
                 </div>
                 <div class="cert-card">
                     <h3>SAFe Agile–Scrum Certified</h3>
                     <p>Scaled Agile, Inc.</p>
+                    <div class="cert-icon"><i class="fas fa-arrows-alt-h"></i></div>
                 </div>
                 <div class="cert-card">
                     <h3>Business Intelligence Certified</h3>
                     <p>Microsoft</p>
+                    <div class="cert-icon"><i class="fas fa-chart-bar"></i></div>
                 </div>
             </div>
         </div>
