@@ -1,151 +1,110 @@
-/* Root theme tokens */
-:root {
-  --bg: #0b1220;
-  --bg-elev: #0f172a;
-  --text: #e5e7eb;
-  --muted: #94a3b8;
-  --brand: #60a5fa;
-  --brand-2: #34d399;
-  --card: #111827;
-  --border: #1f2937;
-  --link: #93c5fd;
-  --shadow: 0 10px 30px rgba(0,0,0,.35);
-  --container-max: 1200px;
-  --header-h: 60px;
+// ---- Theme toggle ----
+const themeToggle = document.getElementById('themeToggle');
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
+if (!savedTheme) {
+  const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+  document.documentElement.setAttribute('data-theme', prefersLight ? 'light' : 'dark');
 }
-[data-theme="light"] {
-  --bg: #ffffff;
-  --bg-elev: #f8fafc;
-  --text: #0f172a;
-  --muted: #475569;
-  --brand: #2563eb;
-  --brand-2: #059669;
-  --card: #ffffff;
-  --border: #e2e8f0;
-  --link: #1d4ed8;
-  --shadow: 0 10px 30px rgba(2,6,23,.08);
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme');
+    const next = current === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  });
 }
 
-/* Respect notches / safe areas */
-:root { 
-  --safe-top: env(safe-area-inset-top, 0px);
-  --safe-right: env(safe-area-inset-right, 0px);
-  --safe-bottom: env(safe-area-inset-bottom, 0px);
-  --safe-left: env(safe-area-inset-left, 0px);
+// ---- Mobile nav (hamburger) ----
+const menuToggle = document.getElementById('menuToggle');
+const siteNav = document.getElementById('siteNav');
+function setNavOpen(isOpen) {
+  if (!siteNav) return;
+  siteNav.setAttribute('data-open', isOpen ? 'true' : 'false');
+  if (menuToggle) menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+}
+if (menuToggle && siteNav) {
+  menuToggle.addEventListener('click', () => {
+    const open = siteNav.getAttribute('data-open') === 'true';
+    setNavOpen(!open);
+  });
+  // Close when clicking a link (for single-page scroll)
+  siteNav.addEventListener('click', (e) => {
+    const a = e.target.closest('a');
+    if (a && a.getAttribute('href')?.startsWith('#')) setNavOpen(false);
+  });
+  // Close on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') setNavOpen(false);
+  });
+  // Close if user clicks outside the nav when open
+  document.addEventListener('click', (e) => {
+    const open = siteNav.getAttribute('data-open') === 'true';
+    if (!open) return;
+    const withinNav = siteNav.contains(e.target);
+    const isToggle = menuToggle.contains(e.target);
+    if (!withinNav && !isToggle) setNavOpen(false);
+  });
 }
 
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0; 
-  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background: var(--bg); color: var(--text);
-  padding-left: var(--safe-left); padding-right: var(--safe-right);
+// ---- Footer timestamps ----
+const yearEl = document.getElementById('year');
+const lastUpdatedEl = document.getElementById('lastUpdated');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
+if (lastUpdatedEl) {
+  lastUpdatedEl.textContent = new Date().toLocaleDateString(undefined, {
+    year: 'numeric', month: 'short', day: '2-digit'
+  });
 }
-a { color: var(--link); text-decoration: none; }
-a:hover { text-decoration: underline; }
-.container { width: min(var(--container-max), 92%); margin: 0 auto; }
 
-/* Skip link */
-.skip-link { position:absolute; left:-9999px; }
-.skip-link:focus { left: 12px; top: 12px; background: var(--brand); color:white; padding:8px 12px; border-radius:10px; z-index: 1000; }
-
-/* Header & nav */
-header {
-  position: sticky; top: 0; backdrop-filter: blur(8px);
-  background: color-mix(in oklab, var(--bg) 85%, transparent);
-  border-bottom: 1px solid var(--border);
-  z-index: 50;
-}
-.nav { display:grid; grid-template-columns: auto 1fr auto; align-items:center; gap:12px; padding:12px 0; min-height: var(--header-h); }
-.brand { display:flex; align-items:center; gap:12px; font-weight:700; letter-spacing:.3px; }
-.brand .dot { width:10px; height:10px; border-radius:50%; background: linear-gradient(135deg,var(--brand),var(--brand-2)); box-shadow:0 0 0 3px color-mix(in oklab, var(--brand) 20%, transparent); }
-.brand-link { color: var(--text); }
-
-/* Primary nav */
-nav ul { list-style:none; display:flex; gap:18px; margin:0; padding:0; justify-content:flex-end; }
-nav a { color: var(--text); opacity:.85; font-weight: 500; }
-nav a:hover, nav a:focus { opacity:1; }
-
-/* Buttons */
-.btn { display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:999px; border:1px solid var(--border); background:linear-gradient(180deg, color-mix(in oklab, var(--bg-elev) 90%, transparent), var(--bg)); color:var(--text); box-shadow: var(--shadow); text-decoration:none; }
-.btn.primary { background: linear-gradient(135deg, var(--brand), var(--brand-2)); border: none; color: white; }
-
-/* Icon button for mobile menu */
-.icon-btn { display:none; place-items:center; width:38px; height:38px; border-radius:10px; border:1px solid var(--border); background: var(--card); color: var(--text); }
-.icon-lines { position: relative; width:18px; height:2px; background: currentColor; display:block; }
-.icon-lines::before, .icon-lines::after { content:""; position:absolute; left:0; width:18px; height:2px; background: currentColor; }
-.icon-lines::before { top:-6px; }
-.icon-lines::after { top:6px; }
-
-/* Hero */
-.hero { display:grid; grid-template-columns: 1.2fr .8fr; gap:32px; align-items:center; padding: clamp(36px, 6vw, 72px) 0; }
-.hero h1 { font-size: clamp(28px, 5vw, 56px); margin: 0 0 14px; line-height:1.05; }
-.hero .lead { color: var(--muted); font-size: clamp(16px, 2.3vw, 20px); }
-.gradient-text {
-  background: linear-gradient(90deg, var(--brand), var(--brand-2));
-  -webkit-background-clip: text; background-clip:text; color: transparent;
-  animation: shine 6s linear infinite; background-size: 200% 100%;
-}
-@keyframes shine { to { background-position: 200% 0; } }
-.cta { display:flex; gap:12px; margin-top:22px; flex-wrap: wrap; }
-.card { background: var(--card); border:1px solid var(--border); border-radius: 16px; padding:16px; }
-.profile { aspect-ratio: 1; border-radius: 16px; background: radial-gradient(120px 120px at 30% 30%, color-mix(in oklab, var(--brand) 35%, transparent), transparent), radial-gradient(120px 120px at 70% 70%, color-mix(in oklab, var(--brand-2) 35%, transparent), transparent); border:1px dashed var(--border); }
-
-/* Sections */
-section { padding: 36px 0; }
-section h2 { font-size: clamp(22px, 3.2vw, 32px); margin: 0 0 14px; }
-.muted { color: var(--muted); }
-
-/* Projects */
-.projects-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:18px; }
-.project { display:flex; flex-direction: column; gap:12px; }
-.project .thumb { height:160px; border-radius:12px; background: linear-gradient(135deg, color-mix(in oklab, var(--brand) 18%, var(--card)), color-mix(in oklab, var(--brand-2) 18%, var(--card))); border:1px solid var(--border); }
-.tags { display:flex; gap:6px; flex-wrap:wrap; }
-.tag { font-size:12px; padding:4px 10px; border-radius:999px; background: color-mix(in oklab, var(--brand) 12%, var(--card)); border:1px solid var(--border); }
-.project .actions { display:flex; gap:8px; margin-top:auto; }
-
-/* Timeline */
-.timeline { display:grid; gap:14px; }
-.t-item { display:grid; grid-template-columns: 120px 1fr; gap:14px; padding:12px; border:1px solid var(--border); border-radius:12px; background: var(--card); }
-.t-date { font-weight:600; color: var(--muted); }
-
-/* Skills */
-.chips { display:flex; flex-wrap:wrap; gap:10px; }
-.chip { padding:8px 12px; border:1px solid var(--border); border-radius:999px; background: var(--card); }
-
-/* Footer */
-footer { border-top:1px solid var(--border); padding:24px 0 max(48px, var(--safe-bottom)); color: var(--muted); }
-.footerbar { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; }
-
-/* MOBILE NAV (≤ 800px) */
-@media (max-width: 800px) {
-  .icon-btn { display:grid; }
-  /* Grid: brand | toggler | theme */
-  .nav { grid-template-columns: 1fr auto auto; }
-  nav ul {
-    position: absolute; inset: calc(var(--header-h) + var(--safe-top)) 0 auto 0;
-    background: var(--card); border-bottom:1px solid var(--border);
-    display: none; flex-direction: column; gap: 0; padding: 6px; z-index: 100;
+// ---- Projects data ----
+const projects = [
+  {
+    title: 'RFID + PHIS Compliance Modernization',
+    blurb: 'Enterprise program enabling production visibility & regulatory reporting across 10+ plants.',
+    tags: ['IoT','RFID','Data Platform','Compliance'],
+    demo: '#',
+    code: '#'
+  },
+  {
+    title: 'Portfolio Ownership Model (50+ Apps)',
+    blurb: 'Redesigned product ownership & capacity planning to improve delivery and reduce thrash.',
+    tags: ['Portfolio Mgmt','JIRA','Operating Model'],
+    demo: '#',
+    code: '#'
+  },
+  {
+    title: 'Flight Deal Discovery App (MVP)',
+    blurb: 'Perplexity-style UI with Supabase & Expo; conversational flight search & alerts.',
+    tags: ['React Native','Supabase','AI'],
+    demo: '#',
+    code: '#'
   }
-  nav li { display: contents; }
-  nav a { padding: 12px 16px; border-radius: 10px; }
-  /* When nav has data-open=true, show menu */
-  nav[data-open="true"] ul { display:flex; }
-}
+];
 
-/* HERO single column on narrow */
-@media (max-width: 900px) {
-  .hero { grid-template-columns: 1fr; }
-}
+const grid = document.getElementById('projectsGrid');
+const make = (html) => {
+  const t = document.createElement('template');
+  t.innerHTML = html.trim();
+  return t.content.firstChild;
+};
 
-/* XL screens */
-@media (min-width: 1440px) {
-  :root { --container-max: 1280px; }
-  .hero h1 { font-size: clamp(36px, 4vw, 64px); }
-}
-
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  * { animation: none !important; transition: none !important; }
+if (grid) {
+  projects.forEach(p => {
+    const el = make(`
+      <article class="project card">
+        <div class="thumb" role="img" aria-label="Project thumbnail"></div>
+        <div>
+          <h3 style="margin:0 0 6px; font-size:18px;">${p.title}</h3>
+          <p class="muted" style="margin:0 0 10px;">${p.blurb}</p>
+          <div class="tags">${p.tags.map(t => `<span class=\"tag\">${t}</span>`).join('')}</div>
+        </div>
+        <div class="actions">
+          <a class="btn" href="${p.demo}" target="_blank" rel="noopener">Live</a>
+          <a class="btn" href="${p.code}" target="_blank" rel="noopener">Code</a>
+        </div>
+      </article>
+    `);
+    grid.appendChild(el);
+  });
 }
