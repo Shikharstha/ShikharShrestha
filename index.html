@@ -1,170 +1,156 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)">
-<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-<title>Shikhar Shrestha — Portfolio</title>
-<meta name="description" content="Portfolio of Shikhar Shrestha — Program & Product Leader. Projects, writing, and contact." />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <title>Shikhar Shrestha — Portfolio</title>
+  <meta name="description" content="Portfolio of Shikhar Shrestha — Program & Product Leader. Projects, writing, and contact." />
 
+  <!-- Open Graph / SEO -->
+  <meta property="og:title" content="Shikhar Shrestha — Portfolio" />
+  <meta property="og:description" content="Program & Product Leader. Projects, writing, and contact." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://shikharstha.github.io/portfolio/" />
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/0?v=4" />
 
-<!-- Open Graph / SEO -->
-<meta property="og:title" content="Shikhar Shrestha — Portfolio" />
-<meta property="og:description" content="Program & Product Leader. Projects, writing, and contact." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://shikharstha.github.io/portfolio/" />
-<meta property="og:image" content="https://avatars.githubusercontent.com/u/0?v=4" />
+  <!-- Favicon (inline SVG) -->
+  <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="16" fill="%23030D22"/><text x="50" y="56" font-size="44" text-anchor="middle" fill="white" font-family="Inter, Arial, sans-serif">SS</text></svg>' />
 
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-<!-- Favicon (inline SVG) -->
-<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="16" fill="%23030D22"/><text x="50" y="56" font-size="44" text-anchor="middle" fill="white" font-family="Inter, Arial, sans-serif">SS</text></svg>' />
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
 
-
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-
-<!-- Styles -->
-<link rel="stylesheet" href="styles.css" />
-
-
-<!-- Scripts -->
-<script defer src="script.js"></script>
+  <!-- Scripts -->
+  <script defer src="script.js"></script>
 </head>
 <body>
-<a href="#main" class="skip-link">Skip to content</a>
-<header>
-<div class="container nav">
-<div class="brand"><div class="dot" aria-hidden="true"></div> <a class="brand-link" href="#home">Shikhar Shrestha</a></div>
+  <a href="#main" class="skip-link">Skip to content</a>
 
+  <header>
+    <div class="container nav">
+      <div class="brand"><div class="dot" aria-hidden="true"></div> <a class="brand-link" href="#home">Shikhar Shrestha</a></div>
 
-<!-- Mobile menu button (hidden on wide screens) -->
-<button id="menuToggle" class="icon-btn" aria-label="Open menu" aria-controls="siteNav" aria-expanded="false" title="Menu">
-<span class="icon-lines" aria-hidden="true"></span>
-</button>
+      <!-- Mobile menu button (hidden on wide screens) -->
+      <button id="menuToggle" class="icon-btn" aria-label="Open menu" aria-controls="siteNav" aria-expanded="false" title="Menu">
+        <span class="icon-lines" aria-hidden="true"></span>
+      </button>
 
+      <nav id="siteNav" aria-label="Primary" data-open="false">
+        <ul>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
 
-<nav id="siteNav" aria-label="Primary">
-<ul>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#experience">Experience</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</nav>
+      <button id="themeToggle" class="btn" aria-label="Toggle theme" title="Toggle theme">🌗</button>
+    </div>
+  </header>
 
+  <main id="main" class="container">
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div>
+        <h1>Program & Product Leader <span class="gradient-text">building systems that scale</span>.</h1>
+        <p class="lead">I ship cross-functional programs in data, platforms, and operations. MBA @ UARK. PMP, CSP. Currently leading DevOps and portfolio modernization at Tyson Foods.</p>
+        <div class="cta">
+          <a href="#projects" class="btn primary">View Projects</a>
+          <a href="resume.pdf" class="btn" target="_blank" rel="noopener">Download Résumé</a>
+        </div>
+      </div>
+      <div class="card profile" role="img" aria-label="Abstract profile graphic"></div>
+    </section>
 
-<button id="themeToggle" class="btn" aria-label="Toggle theme" title="Toggle theme">🌗</button>
-</div>
-</header>
+    <!-- Projects -->
+    <section id="projects">
+      <h2>Selected Projects</h2>
+      <p class="muted">A few things I’ve shipped or led. Replace with your own.</p>
+      <div class="projects-grid" id="projectsGrid"></div>
+    </section>
 
+    <!-- Experience -->
+    <section id="experience">
+      <h2>Experience</h2>
+      <div class="timeline">
+        <div class="t-item">
+          <div class="t-date">2023–Now</div>
+          <div>
+            <strong>Tyson Foods — Program Manager (IT Applications & Engineering)</strong>
+            <p class="muted">Led IoT (RFID/PHIS) & data platform programs across 50+ apps; instituted portfolio ownership, improved FTE forecast accuracy, and delivered $750K+ annual savings.</p>
+          </div>
+        </div>
+        <div class="t-item">
+          <div class="t-date">2021–2023</div>
+          <div>
+            <strong>Innovation & Implementation — Project Lead</strong>
+            <p class="muted">Chipotle RFID pilot, Restaurant Depot UPC customization, and inventory‑audit modernization. Cross‑functional leadership with measurable outcomes.</p>
+          </div>
+        </div>
+        <div class="t-item">
+          <div class="t-date">Earlier</div>
+          <div>
+            <strong>Surya Social Service Society — Administrative Project Manager</strong>
+            <p class="muted">Scaled volunteer operations and community programs in Karnali, Nepal.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<main id="main" class="container">
-<!-- Hero -->
-<section class="hero" id="home">
-<div>
-<h1>Program & Product Leader <span class="gradient-text">building systems that scale</span>.</h1>
-<p class="lead">I ship cross-functional programs in data, platforms, and operations. MBA @ UARK. PMP, CSP. Currently leading DevOps and portfolio modernization at Tyson Foods.</p>
-<div class="cta">
-<a href="#projects" class="btn primary">View Projects</a>
-<a href="resume.pdf" class="btn" target="_blank" rel="noopener">Download Résumé</a>
-</div>
-</div>
-<div class="card profile" role="img" aria-label="Abstract profile graphic"></div>
-</section>
+    <!-- Skills -->
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="chips">
+        <span class="chip">Program/Portfolio Mgmt</span>
+        <span class="chip">Product Strategy</span>
+        <span class="chip">JIRA / Confluence</span>
+        <span class="chip">Data Engineering (SnapLogic, DataStage)</span>
+        <span class="chip">Power BI</span>
+        <span class="chip">DevOps</span>
+        <span class="chip">Leadership & Coaching</span>
+      </div>
+    </section>
 
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p class="muted">Open to collaboration, advising, and product/program roles. Best way to reach me is email or LinkedIn.</p>
+      <div class="cta">
+        <a class="btn primary" href="mailto:shikarstha@gmail.com">Email Me</a>
+        <a class="btn" href="https://www.linkedin.com/in/shikharstha/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+        <a class="btn" href="https://github.com/shikharstha" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+      </div>
+    </section>
+  </main>
 
-<!-- Projects -->
-<section id="projects">
-<h2>Selected Projects</h2>
-<p class="muted">A few things I’ve shipped or led. Replace with your own.</p>
-<div class="projects-grid" id="projectsGrid"></div>
-</section>
+  <footer>
+    <div class="container">
+      <div class="footerbar">
+        <small>© <span id="year"></span> Shikhar Shrestha. All rights reserved.</small>
+        <small>Last updated: <span id="lastUpdated"></span></small>
+      </div>
+    </div>
+  </footer>
 
-<!-- Experience -->
-<section id="experience">
-<h2>Experience</h2>
-<div class="timeline">
-<div class="t-item">
-<div class="t-date">2023–Now</div>
-<div>
-<strong>Tyson Foods — Program Manager (IT Applications & Engineering)</strong>
-<p class="muted">Led IoT (RFID/PHIS) & data platform programs across 50+ apps; instituted portfolio ownership, improved FTE forecast accuracy, and delivered $750K+ annual savings.</p>
-</div>
-</div>
-<div class="t-item">
-<div class="t-date">2021–2023</div>
-<div>
-<strong>Innovation & Implementation — Project Lead</strong>
-<p class="muted">Chipotle RFID pilot, Restaurant Depot UPC customization, and inventory‑audit modernization. Cross‑functional leadership with measurable outcomes.</p>
-</div>
-</div>
-<div class="t-item">
-<div class="t-date">Earlier</div>
-<div>
-<strong>Surya Social Service Society — Administrative Project Manager</strong>
-<p class="muted">Scaled volunteer operations and community programs in Karnali, Nepal.</p>
-</div>
-</div>
-</div>
-</section>
-
-
-
-<!-- Skills -->
-<section id="skills">
-<h2>Skills</h2>
-<div class="chips">
-<span class="chip">Program/Portfolio Mgmt</span>
-<span class="chip">Product Strategy</span>
-<span class="chip">JIRA / Confluence</span>
-<span class="chip">Data Engineering (SnapLogic, DataStage)</span>
-<span class="chip">Power BI</span>
-<span class="chip">DevOps</span>
-<span class="chip">Leadership & Coaching</span>
-</div>
-</section>
-
-
-<!-- Contact -->
-<section id="contact">
-<h2>Contact</h2>
-<p class="muted">Open to collaboration, advising, and product/program roles. Best way to reach me is email or LinkedIn.</p>
-<div class="cta">
-<a class="btn primary" href="mailto:shikarstha@gmail.com">Email Me</a>
-<a class="btn" href="https://www.linkedin.com/in/shikharstha/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
-<a class="btn" href="https://github.com/shikharstha" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
-</div>
-</section>
-</main>
-
-
-<footer>
-<div class="container">
-<div class="footerbar">
-<small>© <span id="year"></span> Shikhar Shrestha. All rights reserved.</small>
-<small>Last updated: <span id="lastUpdated"></span></small>
-</div>
-</div>
-</footer>
-
-
-<!-- Schema.org structured data (SEO) -->
-<script type="application/ld+json">
-{
-"@context": "https://schema.org",
-"@type": "Person",
-"name": "Shikhar Shrestha",
-"url": "https://shikharstha.github.io/portfolio/",
-"sameAs": [
-"https://www.linkedin.com/in/shikharstha/",
-"https://github.com/shikharstha"
-],
-"jobTitle": "Program & Product Leader"
-}
-</script>
+  <!-- Schema.org structured data (SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Shikhar Shrestha",
+    "url": "https://shikharstha.github.io/portfolio/",
+    "sameAs": [
+      "https://www.linkedin.com/in/shikharstha/",
+      "https://github.com/shikharstha"
+    ],
+    "jobTitle": "Program & Product Leader"
+  }
+  </script>
 </body>
 </html>
