@@ -72,7 +72,7 @@
         .logo img {
             width: 35px;
             height: 35px;
-            border-radius: 50%;
+            border-radius: var(--border-radius);
             object-fit: cover;
         }
 
@@ -91,6 +91,32 @@
 
         .nav-links a:hover {
             color: var(--accent-light);
+        }
+
+        .header-social {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .social-link {
+            width: 38px;
+            height: 38px;
+            background-color: var(--charcoal-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--off-white);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1.1rem;
+        }
+
+        .social-link:hover {
+            background-color: var(--accent);
+            color: var(--off-white);
+            transform: translateY(-3px);
         }
 
         .mobile-menu {
@@ -116,8 +142,8 @@
 
         .profile-img {
             width: 100%;
-            max-width: 250px;
-            border-radius: 50%;
+            max-width: 280px;
+            border-radius: var(--border-radius);
             box-shadow: var(--shadow-hover);
             justify-self: center;
             border: 3px solid var(--accent);
@@ -137,24 +163,6 @@
         .hero-text p {
             margin-bottom: 1.5rem;
             max-width: 600px;
-        }
-
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 0.7rem;
-        }
-
-        .contact-item i {
-            color: var(--accent-light);
-            width: 20px;
         }
 
         .cta-button {
@@ -410,24 +418,6 @@
             margin-top: 1rem;
         }
 
-        .social-link {
-            width: 38px;
-            height: 38px;
-            background-color: var(--charcoal-light);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--off-white);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .social-link:hover {
-            background-color: var(--accent);
-            color: var(--off-white);
-        }
-
         .contact-form {
             background-color: var(--charcoal-light);
             padding: 1.8rem;
@@ -569,7 +559,7 @@
             }
             
             .profile-img {
-                max-width: 200px;
+                max-width: 250px;
             }
         }
 
@@ -603,14 +593,14 @@
                 font-size: 1.2rem;
             }
 
-            .contact-info {
-                grid-template-columns: 1fr;
-            }
-
             .footer-content {
                 flex-direction: column;
                 gap: 1rem;
                 text-align: center;
+            }
+
+            .header-social {
+                display: none;
             }
         }
 
@@ -650,6 +640,9 @@
                     <a href="#education">Education</a>
                     <a href="#contact">Contact</a>
                 </div>
+                <div class="header-social">
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                </div>
                 <div class="mobile-menu">
                     <i class="fas fa-bars"></i>
                 </div>
@@ -665,25 +658,6 @@
                 <h1>Shikhar Shrestha</h1>
                 <div class="title">Senior Program/Project Manager</div>
                 <p>6+ years leading complex, cross-functional programs and portfolios in fast-paced environments. Trusted partner to VP/Director leadership for OKRs, MBR/QBR, and strategic planning.</p>
-                
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Fayetteville, AR</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-mobile-alt"></i>
-                        <span>423.486.6424</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>shikarstha@gmail.com</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-linkedin"></i>
-                        <span>linkedin.com/in/shikharstha</span>
-                    </div>
-                </div>
                 
                 <a href="#contact" class="cta-button">Get In Touch</a>
             </div>
