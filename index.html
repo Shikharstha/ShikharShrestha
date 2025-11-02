@@ -3,25 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub Portfolio</title>
+    <title>Shikhar Shrestha | Senior Program/Project Manager</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* CSS Variables for easy theming */
+        /* CSS Variables for consistent theming */
         :root {
-            --primary: #2d2d39;
-            --secondary: #3a3a4e;
-            --accent: #6e57e0;
-            --accent-light: #8a78e8;
-            --text: #f5f5f7;
-            --text-secondary: #b0b0c0;
-            --card-bg: #363646;
-            --success: #4ade80;
-            --warning: #facc15;
-            --danger: #f87171;
-            --border-radius: 12px;
+            --primary: #2c3e50;
+            --secondary: #34495e;
+            --accent: #3498db;
+            --accent-light: #5dade2;
+            --text: #2c3e50;
+            --text-light: #7f8c8d;
+            --background: #f9f9f9;
+            --card-bg: #ffffff;
+            --border-radius: 8px;
             --transition: all 0.3s ease;
-            --shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-            --shadow-light: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.15);
         }
 
         * {
@@ -32,10 +30,9 @@
         }
 
         body {
-            background-color: var(--primary);
+            background-color: var(--background);
             color: var(--text);
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
         /* Container */
@@ -48,12 +45,13 @@
 
         /* Header */
         header {
-            background-color: var(--secondary);
+            background-color: var(--primary);
+            color: white;
             padding: 1.5rem 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: var(--shadow-light);
+            box-shadow: var(--shadow);
         }
 
         .nav-container {
@@ -63,16 +61,9 @@
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 700;
-            color: var(--accent);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo i {
-            font-size: 2rem;
+            color: white;
         }
 
         .nav-links {
@@ -81,7 +72,7 @@
         }
 
         .nav-links a {
-            color: var(--text);
+            color: white;
             text-decoration: none;
             font-weight: 500;
             transition: var(--transition);
@@ -89,7 +80,7 @@
         }
 
         .nav-links a:hover {
-            color: var(--accent);
+            color: var(--accent-light);
         }
 
         .nav-links a::after {
@@ -99,7 +90,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background-color: var(--accent);
+            background-color: var(--accent-light);
             transition: var(--transition);
         }
 
@@ -111,33 +102,52 @@
             display: none;
             font-size: 1.5rem;
             cursor: pointer;
+            color: white;
         }
 
         /* Hero Section */
         .hero {
-            padding: 5rem 0;
+            padding: 4rem 0;
             background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            text-align: center;
+            color: white;
         }
 
         .hero-content {
             max-width: 800px;
-            margin: 0 auto;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(90deg, var(--accent), var(--accent-light));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-light);
         }
 
         .hero p {
-            font-size: 1.2rem;
-            color: var(--text-secondary);
+            font-size: 1.1rem;
             margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-item i {
+            color: var(--accent-light);
         }
 
         .cta-button {
@@ -149,59 +159,19 @@
             text-decoration: none;
             font-weight: 600;
             transition: var(--transition);
-            box-shadow: var(--shadow-light);
+            box-shadow: var(--shadow);
+            border: 2px solid var(--accent);
         }
 
         .cta-button:hover {
-            background-color: var(--accent-light);
+            background-color: transparent;
             transform: translateY(-3px);
-            box-shadow: var(--shadow);
+            box-shadow: var(--shadow-hover);
         }
 
-        /* Stats Section */
-        .stats {
+        /* Section Styling */
+        section {
             padding: 4rem 0;
-            background-color: var(--secondary);
-        }
-
-        .stats-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .stat-card {
-            background-color: var(--card-bg);
-            padding: 2rem;
-            border-radius: var(--border-radius);
-            text-align: center;
-            transition: var(--transition);
-            box-shadow: var(--shadow-light);
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow);
-        }
-
-        .stat-card i {
-            font-size: 2.5rem;
-            color: var(--accent);
-            margin-bottom: 1rem;
-        }
-
-        .stat-card h3 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-card p {
-            color: var(--text-secondary);
-        }
-
-        /* About Section */
-        .about {
-            padding: 5rem 0;
         }
 
         .section-title {
@@ -210,7 +180,7 @@
         }
 
         .section-title h2 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             margin-bottom: 1rem;
             position: relative;
             display: inline-block;
@@ -229,153 +199,221 @@
         }
 
         .section-title p {
-            color: var(--text-secondary);
+            color: var(--text-light);
             max-width: 600px;
             margin: 0 auto;
         }
 
-        .about-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .about-text h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            color: var(--accent);
-        }
-
-        .about-text p {
-            margin-bottom: 1.5rem;
-            color: var(--text-secondary);
-        }
-
-        .about-image {
-            text-align: center;
-        }
-
-        .profile-img {
-            width: 100%;
-            max-width: 400px;
+        /* Core Competencies */
+        .competencies {
+            background-color: var(--card-bg);
             border-radius: var(--border-radius);
+            padding: 2.5rem;
             box-shadow: var(--shadow);
         }
 
-        /* Skills Section */
-        .skills {
-            padding: 5rem 0;
-            background-color: var(--secondary);
+        .competency-category {
+            margin-bottom: 2rem;
         }
 
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .skill-category {
-            background-color: var(--card-bg);
-            padding: 2rem;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow-light);
-        }
-
-        .skill-category h3 {
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
+        .competency-category h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
             display: flex;
             align-items: center;
             gap: 0.8rem;
         }
 
-        .skill-category h3 i {
-            color: var(--accent);
+        .competency-category h3 i {
+            font-size: 1.2rem;
         }
 
-        .skill-list {
+        .competency-list {
             display: flex;
             flex-wrap: wrap;
             gap: 1rem;
         }
 
-        .skill-item {
-            background-color: var(--primary);
+        .competency-item {
+            background-color: var(--background);
             padding: 0.7rem 1.2rem;
             border-radius: 50px;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            border: 1px solid #e0e0e0;
+        }
+
+        .competency-item:hover {
+            background-color: var(--accent);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Experience Section */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--accent);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-content {
+            padding: 20px;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
             transition: var(--transition);
         }
 
-        .skill-item:hover {
-            background-color: var(--accent);
-            transform: scale(1.05);
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
         }
 
-        /* GitHub Activity */
-        .activity {
-            padding: 5rem 0;
-        }
-
-        .activity-container {
-            background-color: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: 2rem;
-            box-shadow: var(--shadow-light);
-        }
-
-        .activity-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-        }
-
-        .activity-header h3 {
-            font-size: 1.5rem;
-        }
-
-        .activity-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .activity-stat {
-            text-align: center;
-            padding: 1.5rem;
-            background-color: var(--secondary);
-            border-radius: var(--border-radius);
-        }
-
-        .activity-stat i {
-            font-size: 2rem;
+        .timeline-content h3 {
+            margin-bottom: 0.5rem;
             color: var(--accent);
-            margin-bottom: 1rem;
         }
 
-        .activity-stat h4 {
-            font-size: 1.8rem;
+        .timeline-content .company {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .timeline-content .date {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .timeline-content ul {
+            padding-left: 1.5rem;
+        }
+
+        .timeline-content li {
             margin-bottom: 0.5rem;
         }
 
-        .activity-graph {
-            height: 200px;
-            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 4px solid var(--accent);
+            border-radius: 50%;
+            top: 20px;
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(odd)::after {
+            right: -10px;
+        }
+
+        .timeline-item:nth-child(even)::after {
+            left: -10px;
+        }
+
+        /* Education Section */
+        .education {
+            background-color: var(--card-bg);
+            padding: 3rem;
             border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .education-item {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .education-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .education-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+
+        .education-item .institution {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-item .date {
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        .certifications {
+            margin-top: 2rem;
+        }
+
+        .certifications h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .cert-list {
             display: flex;
-            align-items: center;
-            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .cert-item {
+            background-color: var(--background);
+            padding: 0.8rem 1.5rem;
+            border-radius: var(--border-radius);
+            font-size: 0.95rem;
+            border: 1px solid #e0e0e0;
+            transition: var(--transition);
+        }
+
+        .cert-item:hover {
+            background-color: var(--accent);
             color: white;
-            font-size: 1.2rem;
+            transform: translateY(-3px);
         }
 
         /* Contact Section */
         .contact {
-            padding: 5rem 0;
-            background-color: var(--secondary);
+            background-color: var(--primary);
+            color: white;
         }
 
         .contact-container {
@@ -387,7 +425,7 @@
         .contact-info {
             display: flex;
             flex-direction: column;
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         .contact-card {
@@ -397,14 +435,14 @@
         }
 
         .contact-icon {
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             background-color: var(--accent);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
         }
 
         .contact-text h4 {
@@ -412,7 +450,7 @@
         }
 
         .contact-text p {
-            color: var(--text-secondary);
+            color: rgba(255, 255, 255, 0.8);
         }
 
         .social-links {
@@ -422,14 +460,14 @@
         }
 
         .social-link {
-            width: 45px;
-            height: 45px;
-            background-color: var(--card-bg);
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--text);
+            color: white;
             text-decoration: none;
             transition: var(--transition);
         }
@@ -441,9 +479,9 @@
 
         .contact-form {
             background-color: var(--card-bg);
-            padding: 2.5rem;
+            padding: 2rem;
             border-radius: var(--border-radius);
-            box-shadow: var(--shadow-light);
+            box-shadow: var(--shadow);
         }
 
         .form-group {
@@ -454,14 +492,15 @@
             display: block;
             margin-bottom: 0.5rem;
             font-weight: 500;
+            color: var(--text);
         }
 
         .form-control {
             width: 100%;
             padding: 0.8rem 1rem;
-            background-color: var(--primary);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
+            background-color: var(--background);
+            border: 1px solid #ddd;
+            border-radius: 4px;
             color: var(--text);
             font-size: 1rem;
             transition: var(--transition);
@@ -497,21 +536,22 @@
 
         /* Footer */
         footer {
-            background-color: var(--primary);
-            padding: 3rem 0 1.5rem;
+            background-color: var(--secondary);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
         }
 
         .footer-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
         .footer-logo {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 700;
-            color: var(--accent);
         }
 
         .footer-links {
@@ -520,20 +560,19 @@
         }
 
         .footer-links a {
-            color: var(--text);
+            color: white;
             text-decoration: none;
             transition: var(--transition);
         }
 
         .footer-links a:hover {
-            color: var(--accent);
+            color: var(--accent-light);
         }
 
         .copyright {
-            text-align: center;
-            color: var(--text-secondary);
             padding-top: 1.5rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
         }
 
         /* Back to Top Button */
@@ -571,7 +610,7 @@
         /* Responsive Design */
         @media (max-width: 992px) {
             .hero h1 {
-                font-size: 2.8rem;
+                font-size: 2.3rem;
             }
         }
 
@@ -582,11 +621,11 @@
                 top: 100%;
                 left: 0;
                 width: 100%;
-                background-color: var(--secondary);
+                background-color: var(--primary);
                 flex-direction: column;
                 padding: 1.5rem;
                 gap: 1rem;
-                box-shadow: var(--shadow-light);
+                box-shadow: var(--shadow);
             }
 
             .nav-links.active {
@@ -598,22 +637,39 @@
             }
 
             .hero h1 {
-                font-size: 2.3rem;
+                font-size: 2rem;
             }
 
-            .hero p {
-                font-size: 1.1rem;
+            .hero .title {
+                font-size: 1.3rem;
+            }
+
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+
+            .timeline-item::after {
+                left: 21px;
+            }
+
+            .timeline-item:nth-child(odd)::after,
+            .timeline-item:nth-child(even)::after {
+                left: 21px;
             }
 
             .footer-content {
                 flex-direction: column;
                 gap: 1.5rem;
-                text-align: center;
-            }
-
-            .activity-header {
-                flex-direction: column;
-                gap: 1rem;
                 text-align: center;
             }
         }
@@ -624,19 +680,19 @@
             }
 
             .hero h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
 
             .section-title h2 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
 
             .contact-form {
                 padding: 1.5rem;
             }
 
-            .about-content {
-                grid-template-columns: 1fr;
+            .education {
+                padding: 2rem;
             }
         }
     </style>
@@ -645,16 +701,13 @@
     <!-- Header -->
     <header>
         <div class="container nav-container">
-            <div class="logo">
-                <i class="fab fa-github"></i>
-                <span>DevPortfolio</span>
-            </div>
+            <div class="logo">Shikhar Shrestha</div>
             <nav>
                 <div class="nav-links">
                     <a href="#home">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#skills">Skills</a>
-                    <a href="#activity">GitHub</a>
+                    <a href="#competencies">Competencies</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#education">Education</a>
                     <a href="#contact">Contact</a>
                 </div>
                 <div class="mobile-menu">
@@ -667,142 +720,167 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container hero-content">
-            <h1>Full Stack Developer & Open Source Contributor</h1>
-            <p>Passionate about building scalable applications and contributing to the open source community. Check out my GitHub for my latest work.</p>
-            <a href="https://github.com/yourusername" target="_blank" class="cta-button">View My GitHub <i class="fab fa-github"></i></a>
+            <h1>Shikhar Shrestha</h1>
+            <div class="title">Senior Program/Project Manager | Portfolio Leadership in CPG, Ops Tech, Data & IoT</div>
+            <p>6+ years leading complex, cross-functional programs and portfolios in fast-paced environments. Trusted partner to VP/Director leadership for OKRs, MBR/QBR, and strategic planning.</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Fayetteville, AR</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>423.486.6424</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>shikarstha@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <span>linkedin.com/in/shikharstha</span>
+                </div>
+            </div>
+            
+            <a href="#contact" class="cta-button">Get In Touch</a>
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats">
-        <div class="container stats-container">
-            <div class="stat-card">
-                <i class="fas fa-code-branch"></i>
-                <h3>150+</h3>
-                <p>GitHub Repositories</p>
-            </div>
-            <div class="stat-card">
-                <i class="fas fa-star"></i>
-                <h3>2.5k</h3>
-                <p>GitHub Stars</p>
-            </div>
-            <div class="stat-card">
-                <i class="fas fa-users"></i>
-                <h3>50+</h3>
-                <p>Contributors</p>
-            </div>
-            <div class="stat-card">
-                <i class="fas fa-calendar-alt"></i>
-                <h3>4+</h3>
-                <p>Years Coding</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
+    <!-- Core Competencies Section -->
+    <section id="competencies">
         <div class="container">
             <div class="section-title">
-                <h2>About Me</h2>
-                <p>Learn more about my journey and passion for development</p>
+                <h2>Core Competencies</h2>
+                <p>Skills and expertise developed over 6+ years of program and project management</p>
             </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Hello! I'm a passionate developer</h3>
-                    <p>I'm a full-stack developer with over 4 years of experience building web applications and contributing to open source projects. My journey started with simple HTML/CSS websites and has evolved into complex applications using modern frameworks and technologies.</p>
-                    <p>I believe in writing clean, maintainable code and enjoy solving complex problems. When I'm not coding, you can find me contributing to open source projects, writing technical blogs, or exploring new technologies.</p>
-                    <p>My GitHub profile showcases my passion for development, with various projects ranging from simple utilities to full-stack applications.</p>
-                </div>
-                <div class="about-image">
-                    <div class="profile-img" style="height: 400px; background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
-                        <i class="fas fa-user" style="font-size: 5rem;"></i>
+            <div class="competencies">
+                <div class="competency-category">
+                    <h3><i class="fas fa-tasks"></i> Program & Portfolio Management</h3>
+                    <div class="competency-list">
+                        <div class="competency-item">Portfolio Governance</div>
+                        <div class="competency-item">Strategic Roadmapping</div>
+                        <div class="competency-item">RAID Management</div>
+                        <div class="competency-item">Dependency Management</div>
+                        <div class="competency-item">Benefits Realization</div>
+                        <div class="competency-item">Budget & Vendor Management</div>
+                        <div class="competency-item">Executive Reporting</div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="skills" id="skills">
-        <div class="container">
-            <div class="section-title">
-                <h2>Technical Skills</h2>
-                <p>Technologies and tools I use to bring ideas to life</p>
-            </div>
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h3><i class="fas fa-code"></i> Frontend</h3>
-                    <div class="skill-list">
-                        <div class="skill-item">React</div>
-                        <div class="skill-item">Vue.js</div>
-                        <div class="skill-item">TypeScript</div>
-                        <div class="skill-item">SASS</div>
-                        <div class="skill-item">Tailwind CSS</div>
-                        <div class="skill-item">Webpack</div>
+                <div class="competency-category">
+                    <h3><i class="fas fa-rocket"></i> Agile & Methods</h3>
+                    <div class="competency-list">
+                        <div class="competency-item">SAFe</div>
+                        <div class="competency-item">Scrum</div>
+                        <div class="competency-item">Kanban</div>
+                        <div class="competency-item">PI Planning</div>
+                        <div class="competency-item">Lean Portfolio Management</div>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-server"></i> Backend</h3>
-                    <div class="skill-list">
-                        <div class="skill-item">Node.js</div>
-                        <div class="skill-item">Express</div>
-                        <div class="skill-item">Python</div>
-                        <div class="skill-item">Django</div>
-                        <div class="skill-item">MongoDB</div>
-                        <div class="skill-item">PostgreSQL</div>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-tools"></i> Tools & Others</h3>
-                    <div class="skill-list">
-                        <div class="skill-item">Git & GitHub</div>
-                        <div class="skill-item">Docker</div>
-                        <div class="skill-item">AWS</div>
-                        <div class="skill-item">Figma</div>
-                        <div class="skill-item">Jest</div>
-                        <div class="skill-item">CI/CD</div>
+                <div class="competency-category">
+                    <h3><i class="fas fa-tools"></i> Tools</h3>
+                    <div class="competency-list">
+                        <div class="competency-item">MS Project</div>
+                        <div class="competency-item">Jira</div>
+                        <div class="competency-item">Confluence</div>
+                        <div class="competency-item">ServiceNow</div>
+                        <div class="competency-item">Power BI</div>
+                        <div class="competency-item">Tableau</div>
+                        <div class="competency-item">Mural</div>
+                        <div class="competency-item">Figma</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- GitHub Activity Section -->
-    <section class="activity" id="activity">
+    <!-- Experience Section -->
+    <section id="experience" style="background-color: #f5f7fa;">
         <div class="container">
             <div class="section-title">
-                <h2>GitHub Activity</h2>
-                <p>My contributions and coding activity</p>
+                <h2>Professional Experience</h2>
+                <p>Key roles and accomplishments throughout my career</p>
             </div>
-            <div class="activity-container">
-                <div class="activity-header">
-                    <h3>Recent GitHub Stats</h3>
-                    <a href="https://github.com/yourusername" target="_blank" class="cta-button">View Full Profile</a>
-                </div>
-                <div class="activity-stats">
-                    <div class="activity-stat">
-                        <i class="fas fa-code-commit"></i>
-                        <h4>1,247</h4>
-                        <p>Total Commits</p>
-                    </div>
-                    <div class="activity-stat">
-                        <i class="fas fa-code-pull-request"></i>
-                        <h4>89</h4>
-                        <p>Pull Requests</p>
-                    </div>
-                    <div class="activity-stat">
-                        <i class="fas fa-code-branch"></i>
-                        <h4>42</h4>
-                        <p>Repositories</p>
-                    </div>
-                    <div class="activity-stat">
-                        <i class="fas fa-eye"></i>
-                        <h4>1.2k</h4>
-                        <p>Profile Views</p>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Agile Project & Program Manager – Software Engineering</h3>
+                        <div class="company">Tyson Foods</div>
+                        <div class="date">Jan 2024 - Present</div>
+                        <ul>
+                            <li>Directed IoT and traceability program across multiple plants, deploying RFID and camera systems to enhance production visibility and quality, reducing defect rates by 95%</li>
+                            <li>Drove $800K+ annual savings and accelerated supply planning by enhancing order-management and demand-planning systems</li>
+                            <li>Reduced enterprise operational risk by leading 3 critical infrastructure upgrades</li>
+                            <li>Structured lean product-ownership model for 60+ applications, aligning 5 product owners & 6 developers</li>
+                            <li>Orchestrated VP-level communications (briefings, MBR/QBRs) to ensure transparent business-engineering alignment</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="activity-graph">
-                    <p>GitHub Contribution Graph Visualization</p>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Scrum Master | Agile Program Lead – Data & Analytics</h3>
+                        <div class="company">Tyson Foods</div>
+                        <div class="date">Dec 2022 – Dec 2023</div>
+                        <ul>
+                            <li>Directed a team of 8 data engineers and 5 product owners, maintaining a 95%+ on-time delivery rate for critical analytics features</li>
+                            <li>Facilitated PI planning, retrospectives, and sprint execution across support and product teams using Jira and Mural</li>
+                            <li>Scaled agile practices across product teams in partnership with the Release Train Engineer and senior directors</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Software Developer</h3>
+                        <div class="company">Mid-America Computer Corp.</div>
+                        <div class="date">Dec 2021 – Dec 2022</div>
+                        <ul>
+                            <li>Developed and maintained software solutions for various client needs</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Business Systems Analyst/Project Manager</h3>
+                        <div class="company">Creighton University</div>
+                        <div class="date">June 2019 – Nov 2021</div>
+                        <ul>
+                            <li>Led the analysis and rollout of an Airtable Cloud system, reducing manual workload by 30%</li>
+                            <li>Delivered full-stack features using C#, .NET and SQL</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <div class="section-title">
+                <h2>Education & Certifications</h2>
+                <p>Academic background and professional certifications</p>
+            </div>
+            <div class="education">
+                <div class="education-item">
+                    <h3>Executive MBA</h3>
+                    <div class="institution">University of Arkansas</div>
+                    <div class="date">Expected 2026</div>
+                </div>
+                <div class="education-item">
+                    <h3>B.S., Information Systems</h3>
+                    <div class="institution">St. Cloud State University</div>
+                    <div class="date">2019</div>
+                </div>
+                
+                <div class="certifications">
+                    <h3>Professional Certifications</h3>
+                    <div class="cert-list">
+                        <div class="cert-item">Project Management Professional (PMP)</div>
+                        <div class="cert-item">Professional Scrum Master I (PSM I)</div>
+                        <div class="cert-item">Lean Six Sigma Green Belt</div>
+                        <div class="cert-item">Product Management (Cornell University)</div>
+                        <div class="cert-item">Business Intelligence Certified</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -813,7 +891,7 @@
         <div class="container">
             <div class="section-title">
                 <h2>Get In Touch</h2>
-                <p>Feel free to reach out for collaborations or just a friendly hello</p>
+                <p>Feel free to reach out for professional opportunities or collaborations</p>
             </div>
             <div class="contact-container">
                 <div class="contact-info">
@@ -823,7 +901,7 @@
                         </div>
                         <div class="contact-text">
                             <h4>Email</h4>
-                            <p>hello@devportfolio.com</p>
+                            <p>shikarstha@gmail.com</p>
                         </div>
                     </div>
                     <div class="contact-card">
@@ -832,7 +910,16 @@
                         </div>
                         <div class="contact-text">
                             <h4>Location</h4>
-                            <p>San Francisco, CA</p>
+                            <p>Fayetteville, AR</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Phone</h4>
+                            <p>423.486.6424</p>
                         </div>
                     </div>
                     <div class="contact-card">
@@ -840,12 +927,10 @@
                             <i class="fas fa-share-alt"></i>
                         </div>
                         <div class="contact-text">
-                            <h4>Social Media</h4>
+                            <h4>Connect With Me</h4>
                             <div class="social-links">
-                                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
                                 <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                                <a href="#" class="social-link"><i class="fab fa-dev"></i></a>
+                                <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
                             </div>
                         </div>
                     </div>
@@ -859,6 +944,10 @@
                         <div class="form-group">
                             <label for="email">Email Address</label>
                             <input type="email" id="email" class="form-control" placeholder="your.email@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" class="form-control" placeholder="Subject of your message" required>
                         </div>
                         <div class="form-group">
                             <label for="message">Your Message</label>
@@ -875,17 +964,17 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">DevPortfolio</div>
+                <div class="footer-logo">Shikhar Shrestha</div>
                 <div class="footer-links">
                     <a href="#home">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#skills">Skills</a>
-                    <a href="#activity">GitHub</a>
+                    <a href="#competencies">Competencies</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#education">Education</a>
                     <a href="#contact">Contact</a>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 DevPortfolio. All rights reserved.</p>
+                <p>&copy; 2023 Shikhar Shrestha. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -909,10 +998,11 @@
             // Get form values
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
             
             // In a real app, you would send this data to a server
-            console.log('Form submitted:', { name, email, message });
+            console.log('Form submitted:', { name, email, subject, message });
             
             // Show success message (in a real app)
             alert('Thank you for your message! I will get back to you soon.');
