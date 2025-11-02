@@ -15,6 +15,8 @@
             --off-white-dark: #d0d0d0;
             --accent: #FFFFFF;
             --accent-light: #FAFAFA;
+            --dark-blue: #1a4b8c; /* NEW: Added dark blue color for icons and navigation */
+            --dark-blue-light: #2a5b9c; /* NEW: Lighter version for hover states */
             --border-radius: 6px;
             --transition: all 0.3s ease;
             --shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
@@ -78,19 +80,24 @@
 
         .nav-links {
             display: flex;
-            gap: 1.8rem;
+            gap: 0.5rem; /* Reduced gap for better appearance with padding */
         }
 
+        /* UPDATED: Navigation links with dark blue hover and active states */
         .nav-links a {
             color: var(--off-white);
             text-decoration: none;
             font-weight: 500;
             transition: var(--transition);
             font-size: 0.95rem;
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
         }
 
-        .nav-links a:hover {
-            color: var(--accent-light);
+        .nav-links a:hover,
+        .nav-links a.active {
+            background-color: var(--dark-blue);
+            color: var(--off-white);
         }
 
         .mobile-menu {
@@ -201,8 +208,9 @@
             gap: 0.7rem;
         }
 
+        /* UPDATED: Dark blue icons in competency categories */
         .competency-category h3 i {
-            color: var(--accent);
+            color: var(--dark-blue);
         }
 
         .competency-list {
@@ -367,15 +375,17 @@
             gap: 1rem;
         }
 
+        /* UPDATED: Dark blue contact icons */
         .contact-icon {
             width: 45px;
             height: 45px;
-            background-color: var(--accent);
+            background-color: var(--dark-blue);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.1rem;
+            color: var(--off-white);
         }
 
         .contact-text h4 {
@@ -392,10 +402,11 @@
             margin-top: 1rem;
         }
 
+        /* UPDATED: Dark blue social links */
         .social-link {
             width: 38px;
             height: 38px;
-            background-color: var(--charcoal-light);
+            background-color: var(--dark-blue);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -406,7 +417,7 @@
         }
 
         .social-link:hover {
-            background-color: var(--accent);
+            background-color: var(--dark-blue-light);
             color: var(--off-white);
         }
 
@@ -450,7 +461,7 @@
         }
 
         .submit-btn {
-            background-color: var(--accent);
+            background-color: var(--dark-blue);
             color: var(--off-white);
             border: none;
             padding: 0.7rem 1.8rem;
@@ -464,7 +475,7 @@
         }
 
         .submit-btn:hover {
-            background-color: var(--accent-light);
+            background-color: var(--dark-blue-light);
         }
 
         /* Footer */
@@ -518,7 +529,7 @@
             right: 25px;
             width: 45px;
             height: 45px;
-            background-color: var(--accent);
+            background-color: var(--dark-blue);
             color: var(--off-white);
             border-radius: 50%;
             display: flex;
@@ -539,7 +550,7 @@
         }
 
         .back-to-top:hover {
-            background-color: var(--accent-light);
+            background-color: var(--dark-blue-light);
             transform: translateY(-3px);
         }
 
@@ -617,14 +628,13 @@
     <header>
         <div class="container nav-container">
             <div class="logo">
-
                 <!--- PROFILE PICTURE ---> 
                 <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIj48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iIzJlNDM1MCIvPjxjaXJjbGUgY3g9IjEwMCIgY3k9Ijc1IiByPSIzMCIgZmlsbD0iI2ZmZiIvPjxwYXRoIGQ9Ik0xMDAsMTI1IEE1MCw1MCAwIDEsMCAxMDAsMTc1IEE1MCw1MCAwIDEsMCAxMDAsMTI1IFoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" alt="Profile">
                 <span>Shikhar Shrestha</span>
             </div>
             <nav>
                 <div class="nav-links">
-                    <a href="#home">Home</a>
+                    <a href="#home" class="active">Home</a>
                     <a href="#competencies">Competencies</a>
                     <a href="#experience">Experience</a>
                     <a href="#education">Education</a>
@@ -889,6 +899,7 @@
         const backToTopBtn = document.querySelector('.back-to-top');
         const mobileMenu = document.querySelector('.mobile-menu');
         const navLinks = document.querySelector('.nav-links');
+        const navLinksItems = document.querySelectorAll('.nav-links a');
 
         // Contact form submission
         contactForm.addEventListener('submit', function(e) {
@@ -917,6 +928,9 @@
             } else {
                 backToTopBtn.classList.remove('active');
             }
+            
+            // Update active navigation link based on scroll position
+            updateActiveNavLink();
         });
 
         backToTopBtn.addEventListener('click', function(e) {
@@ -947,6 +961,10 @@
                         behavior: 'smooth'
                     });
                     
+                    // Update active navigation link
+                    navLinksItems.forEach(link => link.classList.remove('active'));
+                    this.classList.add('active');
+                    
                     // Close mobile menu if open
                     if (window.innerWidth <= 768) {
                         navLinks.classList.remove('active');
@@ -961,6 +979,29 @@
                 navLinks.classList.remove('active');
             }
         });
+
+        // Function to update active navigation link based on scroll position
+        function updateActiveNavLink() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.clientHeight;
+                if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSection}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
     </script>
 </body>
 </html>
