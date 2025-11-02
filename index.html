@@ -8,16 +8,17 @@
     <style>
         /* CSS Variables for consistent theming */
         :root {
-            --charcoal: #36454F;
-            --charcoal-light: #4a5a66;
-            --off-white: #F8F8F8;
-            --off-white-dark: #e8e8e8;
-            --black: #1a1a1a;
-            --accent: #2c3e50;
+            --deep-black: #0a0a0a;
+            --charcoal: #2a2a2a;
+            --charcoal-light: #3a3a3a;
+            --off-white: #f0f0f0;
+            --off-white-dark: #d0d0d0;
+            --accent: #4a6fa5;
+            --accent-light: #5d8ccc;
             --border-radius: 6px;
             --transition: all 0.3s ease;
-            --shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-            --shadow-hover: 0 5px 15px rgba(0, 0, 0, 0.15);
+            --shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+            --shadow-hover: 0 5px 15px rgba(0, 0, 0, 0.5);
         }
 
         * {
@@ -28,8 +29,8 @@
         }
 
         body {
-            background-color: var(--off-white);
-            color: var(--black);
+            background-color: var(--deep-black);
+            color: var(--off-white);
             line-height: 1.6;
             font-size: 15px;
         }
@@ -45,7 +46,7 @@
         /* Header */
         header {
             background-color: var(--charcoal);
-            color: white;
+            color: var(--off-white);
             padding: 1rem 0;
             position: sticky;
             top: 0;
@@ -62,7 +63,7 @@
         .logo {
             font-size: 1.3rem;
             font-weight: 700;
-            color: white;
+            color: var(--off-white);
             display: flex;
             align-items: center;
             gap: 10px;
@@ -81,7 +82,7 @@
         }
 
         .nav-links a {
-            color: white;
+            color: var(--off-white);
             text-decoration: none;
             font-weight: 500;
             transition: var(--transition);
@@ -89,21 +90,21 @@
         }
 
         .nav-links a:hover {
-            color: var(--off-white-dark);
+            color: var(--accent-light);
         }
 
         .mobile-menu {
             display: none;
             font-size: 1.3rem;
             cursor: pointer;
-            color: white;
+            color: var(--off-white);
         }
 
         /* Hero Section */
         .hero {
             padding: 3rem 0;
-            background-color: var(--charcoal);
-            color: white;
+            background: linear-gradient(135deg, var(--charcoal) 0%, var(--deep-black) 100%);
+            color: var(--off-white);
         }
 
         .hero-content {
@@ -119,6 +120,7 @@
             border-radius: 50%;
             box-shadow: var(--shadow-hover);
             justify-self: center;
+            border: 3px solid var(--accent);
         }
 
         .hero-text h1 {
@@ -129,7 +131,7 @@
         .hero-text .title {
             font-size: 1.3rem;
             margin-bottom: 1.2rem;
-            color: var(--off-white-dark);
+            color: var(--accent-light);
         }
 
         .hero-text p {
@@ -151,25 +153,25 @@
         }
 
         .contact-item i {
-            color: var(--off-white-dark);
+            color: var(--accent-light);
             width: 20px;
         }
 
         .cta-button {
             display: inline-block;
             background-color: transparent;
-            color: white;
+            color: var(--off-white);
             padding: 0.7rem 1.8rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             transition: var(--transition);
-            border: 2px solid white;
+            border: 2px solid var(--accent);
         }
 
         .cta-button:hover {
-            background-color: white;
-            color: var(--charcoal);
+            background-color: var(--accent);
+            color: var(--off-white);
         }
 
         /* Section Styling */
@@ -180,12 +182,12 @@
         .section-title {
             margin-bottom: 2rem;
             padding-bottom: 0.7rem;
-            border-bottom: 2px solid var(--charcoal);
+            border-bottom: 2px solid var(--accent);
         }
 
         .section-title h2 {
             font-size: 1.8rem;
-            color: var(--charcoal);
+            color: var(--off-white);
         }
 
         /* Core Competencies */
@@ -196,7 +198,7 @@
         }
 
         .competency-category {
-            background-color: white;
+            background-color: var(--charcoal);
             padding: 1.5rem;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
@@ -211,14 +213,14 @@
         .competency-category h3 {
             font-size: 1.2rem;
             margin-bottom: 1rem;
-            color: var(--charcoal);
+            color: var(--off-white);
             display: flex;
             align-items: center;
             gap: 0.7rem;
         }
 
         .competency-category h3 i {
-            color: var(--charcoal-light);
+            color: var(--accent);
         }
 
         .competency-list {
@@ -228,22 +230,22 @@
         }
 
         .competency-item {
-            background-color: var(--off-white);
+            background-color: var(--charcoal-light);
             padding: 0.5rem 1rem;
             border-radius: 50px;
             font-size: 0.85rem;
             transition: var(--transition);
-            border: 1px solid var(--off-white-dark);
+            border: 1px solid var(--charcoal);
         }
 
         .competency-item:hover {
-            background-color: var(--charcoal);
-            color: white;
+            background-color: var(--accent);
+            color: var(--off-white);
         }
 
         /* Experience Section */
         .experience {
-            background-color: white;
+            background-color: var(--charcoal);
             border-radius: var(--border-radius);
             padding: 2rem;
             box-shadow: var(--shadow);
@@ -252,7 +254,7 @@
         .experience-item {
             margin-bottom: 2.5rem;
             padding-bottom: 2rem;
-            border-bottom: 1px solid var(--off-white-dark);
+            border-bottom: 1px solid var(--charcoal-light);
         }
 
         .experience-item:last-child {
@@ -270,17 +272,17 @@
 
         .experience-header h3 {
             font-size: 1.3rem;
-            color: var(--charcoal);
+            color: var(--off-white);
         }
 
         .company {
             font-weight: 600;
-            color: var(--charcoal-light);
+            color: var(--accent-light);
             margin-bottom: 0.3rem;
         }
 
         .date {
-            color: var(--charcoal-light);
+            color: var(--off-white-dark);
             font-style: italic;
             font-size: 0.9rem;
         }
@@ -298,7 +300,7 @@
         }
 
         .education-item {
-            background-color: white;
+            background-color: var(--charcoal);
             padding: 1.5rem;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
@@ -313,17 +315,17 @@
         .education-item h3 {
             font-size: 1.2rem;
             margin-bottom: 0.5rem;
-            color: var(--charcoal);
+            color: var(--off-white);
         }
 
         .institution {
             font-weight: 600;
             margin-bottom: 0.3rem;
-            color: var(--charcoal-light);
+            color: var(--accent-light);
         }
 
         .date {
-            color: var(--charcoal-light);
+            color: var(--off-white-dark);
             font-style: italic;
             font-size: 0.9rem;
             margin-bottom: 1rem;
@@ -336,7 +338,7 @@
         .certifications h3 {
             font-size: 1.2rem;
             margin-bottom: 1rem;
-            color: var(--charcoal);
+            color: var(--off-white);
         }
 
         .cert-list {
@@ -346,23 +348,23 @@
         }
 
         .cert-item {
-            background-color: var(--off-white);
+            background-color: var(--charcoal-light);
             padding: 0.6rem 1.2rem;
             border-radius: var(--border-radius);
             font-size: 0.85rem;
-            border: 1px solid var(--off-white-dark);
+            border: 1px solid var(--charcoal);
             transition: var(--transition);
         }
 
         .cert-item:hover {
-            background-color: var(--charcoal);
-            color: white;
+            background-color: var(--accent);
+            color: var(--off-white);
         }
 
         /* Contact Section */
         .contact {
             background-color: var(--charcoal);
-            color: white;
+            color: var(--off-white);
         }
 
         .contact-container {
@@ -386,7 +388,7 @@
         .contact-icon {
             width: 45px;
             height: 45px;
-            background-color: var(--charcoal-light);
+            background-color: var(--accent);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -399,7 +401,7 @@
         }
 
         .contact-text p {
-            color: rgba(255, 255, 255, 0.8);
+            color: var(--off-white-dark);
         }
 
         .social-links {
@@ -411,23 +413,23 @@
         .social-link {
             width: 38px;
             height: 38px;
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: var(--charcoal-light);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: var(--off-white);
             text-decoration: none;
             transition: var(--transition);
         }
 
         .social-link:hover {
-            background-color: white;
-            color: var(--charcoal);
+            background-color: var(--accent);
+            color: var(--off-white);
         }
 
         .contact-form {
-            background-color: white;
+            background-color: var(--charcoal-light);
             padding: 1.8rem;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
@@ -441,23 +443,23 @@
             display: block;
             margin-bottom: 0.5rem;
             font-weight: 500;
-            color: var(--charcoal);
+            color: var(--off-white);
         }
 
         .form-control {
             width: 100%;
             padding: 0.7rem 1rem;
-            background-color: var(--off-white);
-            border: 1px solid var(--off-white-dark);
+            background-color: var(--charcoal);
+            border: 1px solid var(--charcoal-light);
             border-radius: 4px;
-            color: var(--black);
+            color: var(--off-white);
             font-size: 0.95rem;
             transition: var(--transition);
         }
 
         .form-control:focus {
             outline: none;
-            border-color: var(--charcoal);
+            border-color: var(--accent);
         }
 
         textarea.form-control {
@@ -466,8 +468,8 @@
         }
 
         .submit-btn {
-            background-color: var(--charcoal);
-            color: white;
+            background-color: var(--accent);
+            color: var(--off-white);
             border: none;
             padding: 0.7rem 1.8rem;
             border-radius: 50px;
@@ -480,15 +482,16 @@
         }
 
         .submit-btn:hover {
-            background-color: var(--charcoal-light);
+            background-color: var(--accent-light);
         }
 
         /* Footer */
         footer {
-            background-color: var(--black);
-            color: white;
+            background-color: var(--deep-black);
+            color: var(--off-white);
             padding: 1.5rem 0;
             text-align: center;
+            border-top: 1px solid var(--charcoal);
         }
 
         .footer-content {
@@ -509,20 +512,20 @@
         }
 
         .footer-links a {
-            color: white;
+            color: var(--off-white);
             text-decoration: none;
             transition: var(--transition);
             font-size: 0.9rem;
         }
 
         .footer-links a:hover {
-            color: var(--off-white-dark);
+            color: var(--accent-light);
         }
 
         .copyright {
             padding-top: 1rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.7);
+            border-top: 1px solid var(--charcoal);
+            color: var(--off-white-dark);
             font-size: 0.85rem;
         }
 
@@ -533,8 +536,8 @@
             right: 25px;
             width: 45px;
             height: 45px;
-            background-color: var(--charcoal);
-            color: white;
+            background-color: var(--accent);
+            color: var(--off-white);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -554,7 +557,7 @@
         }
 
         .back-to-top:hover {
-            background-color: var(--charcoal-light);
+            background-color: var(--accent-light);
             transform: translateY(-3px);
         }
 
@@ -734,7 +737,7 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" style="background-color: var(--off-white);">
+    <section id="experience">
         <div class="container">
             <div class="section-title">
                 <h2>Professional Experience</h2>
@@ -831,7 +834,7 @@
     <section class="contact" id="contact">
         <div class="container">
             <div class="section-title">
-                <h2 style="color: white;">Get In Touch</h2>
+                <h2>Get In Touch</h2>
             </div>
             <div class="contact-container">
                 <div class="contact-info">
