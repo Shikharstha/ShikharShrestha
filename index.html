@@ -158,9 +158,11 @@
             border: 2px solid var(--accent);
         }
 
+        /* UPDATED: Blue hover effect for CTA button */
         .cta-button:hover {
-            background-color: var(--accent);
+            background-color: var(--dark-blue);
             color: var(--off-white);
+            border-color: var(--dark-blue);
         }
 
         /* Section Styling */
@@ -228,8 +230,9 @@
             border: 1px solid var(--charcoal);
         }
 
+        /* UPDATED: Blue hover effect for competency items */
         .competency-item:hover {
-            background-color: var(--accent);
+            background-color: var(--dark-blue);
             color: var(--off-white);
         }
 
@@ -357,16 +360,17 @@
             color: var(--off-white);
         }
 
+        /* UPDATED: Column layout for contact section */
         .contact-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 2.5rem;
         }
 
         .contact-info {
             display: flex;
             flex-direction: column;
+            justify-content: center;
             gap: 1.5rem;
         }
 
@@ -508,6 +512,11 @@
             .profile-img {
                 max-width: 250px;
             }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
         }
 
         @media (max-width: 768px) {
@@ -564,6 +573,12 @@
             .experience-header {
                 flex-direction: column;
                 gap: 0.5rem;
+            }
+            
+            .contact-card {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.8rem;
             }
         }
     </style>
@@ -787,6 +802,14 @@
                                 <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <h3>Let's Work Together</h3>
+                    <p>I'm always open to discussing new opportunities and challenges. Feel free to reach out through any of the contact methods listed here.</p>
+                    <p>With my background in program management and digital transformation, I can help your organization achieve its strategic goals through effective planning and execution.</p>
+                    <div style="margin-top: 1.5rem;">
+                        <a href="mailto:shikarstha@gmail.com" class="cta-button">Send Email</a>
                     </div>
                 </div>
             </div>
