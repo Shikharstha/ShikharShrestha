@@ -1,250 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Professional experience of Shikhar Shrestha across Tyson Foods, Mid-America Computer Corporation, and Creighton University." />
-  <title>Experience | Shikhar Shrestha</title>
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23141414'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dominant-baseline='central' fill='%23E50914' font-family='Arial Black' font-size='22' font-weight='900'%3ES%3C/text%3E%3C/svg%3E" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Professional experience of Shikhar Shrestha across Tyson Foods, Mid-America Computer Corporation, and Creighton University.">
+  <title>Experience — Shikhar Shrestha</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23111'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' dominant-baseline='central' fill='%23fff' font-family='Georgia' font-size='20' font-weight='400'%3ES%3C/text%3E%3C/svg%3E">
 </head>
 <body>
 
-  <!-- NAVIGATION -->
-  <nav class="nav">
+  <header class="site-nav">
     <div class="nav-inner">
-      <a href="index.html" class="nav-logo">SHIKHAR<span>.</span></a>
-      <button class="nav-toggle" aria-label="Menu">☰</button>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="experience.html">Experience</a></li>
-        <li><a href="education.html">Education</a></li>
-        <li><a href="projects.html">Projects</a></li>
-      </ul>
+      <a href="index.html" class="nav-brand">Shikhar Shrestha</a>
+      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+      <nav class="nav-links">
+        <a href="index.html#about">About</a>
+        <a href="experience.html" class="active">Experience</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#education">Education</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
     </div>
-  </nav>
+  </header>
 
-  <!-- PAGE HEADER -->
-  <section class="section" style="padding-top: 140px;">
-    <div class="section-header">
-      <div class="section-label reveal">The Career Reel</div>
-      <h1 class="section-title reveal reveal-delay-1">Professional Experience</h1>
-      <p class="section-subtitle reveal reveal-delay-2">
-        6+ years leading technical programs, software engineering teams, data engineering portfolios, and AI/ML initiatives — from Fortune 500 food production to higher education and SaaS.
-      </p>
+  <main>
+    <div class="page-header">
+      <a href="index.html" class="back-link">← Back to home</a>
+      <h1>Experience</h1>
+      <p>6+ years leading technical programs across software engineering, data engineering, and AI/ML — from Fortune 500 food production to higher education and SaaS.</p>
     </div>
 
-    <!-- EXPERIENCE LIST -->
-    <div class="experience-list">
+    <div class="content-section" style="border-top: 1px solid var(--border); padding-top: 40px;">
 
-      <!-- TYSON FOODS -->
-      <article class="exp-card reveal">
+      <div class="exp-block">
         <div class="exp-header">
-          <!--
-            Company logo: Tyson Foods
-            Fallback initials are shown if the image fails to load.
-            To host your own, place a file at assets/logos/tyson.png and change src.
-          -->
-          <div class="company-logo" data-initials="TF">
-            <img src="assets/logos/tyson.png" alt="Tyson Foods logo" />
-          </div>
-          <div class="exp-head-text">
-            <h2 class="exp-company">Tyson Foods</h2>
-            <div class="exp-location">Springdale, AR</div>
-          </div>
-          <div class="exp-duration">
-            <div class="years">4 YEARS</div>
-            <div class="dates">2022 — Present</div>
-          </div>
+          <span class="exp-period">2025 — Present</span>
+          <span class="exp-company">Tyson Foods · Springdale, AR</span>
         </div>
-
-        <div class="exp-body">
-
-          <!-- Role 1: TPM -->
-          <div class="role-block">
-            <h3 class="role-title">Technical Program Manager, Software Engineering</h3>
-            <div class="role-dates">2025 — Present · 1 Year</div>
-            <ul class="role-list">
-              <li>Led 8-stream Mainframe Modernization Program — coordinating IBM and multi-vendor upgrades to deliver a z/OS Connect API platform enabling bi-directional mainframe-to-enterprise integration (Palantir & beyond).</li>
-              <li>Led end-to-end Generative AI initiative analyzing a 1M+ line mainframe code base — securing cross-functional alignment across architects, engineering, and business to deploy AI Agents that automated legacy processes at scale.</li>
-              <li>Delivered $1.9M in hard savings by leading multiple software engineering teams and enhancements — managed full software development life-cycle from scope definition, systems design, dev, test, production deployment, and post-mortem.</li>
-              <li>Led TFS-to-GitLab migration of 27 Beef &amp; Pork web applications — owning full project life cycle from scope definition through delivery to eliminate deployment bottlenecks and align source control with enterprise standards.</li>
-              <li>Stood up Monthly Business Review program for a 12-person team / 55-application portfolio — standardizing capacity planning, intake governance, and RACI frameworks to eliminate role ambiguity and improve delivery predictability.</li>
-              <li>Built a high-performing, self-directed team by reducing stand-up cadence, enabling self-managed JIRA workflows, and empowering Product Owners to lead backlog refinement — shifting team focus from meetings to delivery execution.</li>
-              <li>Bridged the gap between/within technical teams and across business stakeholders; collaborated with VPs &amp; Directors to define goals, scope, and success metrics ensuring execution aligned with business needs.</li>
-              <li>Authored bi-weekly sponsors business reviews communicating program and project statuses, risk mitigation strategies, and stakeholder updates; presented quarterly VP business reviews for the modernization program.</li>
-            </ul>
-          </div>
-
-          <!-- Role 2: PM -->
-          <div class="role-block">
-            <h3 class="role-title">Project Manager, Software Applications</h3>
-            <div class="role-dates">2023 — 2025 · 2 Years</div>
-            <ul class="role-list">
-              <li>Delivered $200K+ in cost savings by driving two AI/ML initiatives from concept to production — computer vision for meat thickness optimization and automated warehouse label verification — owning end-to-end integration.</li>
-              <li>Drove RFID case-tagging roll out across 4 Tyson facilities to meet Chipotle's traceability mandate, securing $54M+ in annual revenue at risk and reinforcing Tyson's standing as a compliant, preferred supplier.</li>
-              <li>Instituted project governance frameworks across complex programs — aligning engineering, product, and executive stakeholders on risk mitigation, change-control, and communication standards to drive on-scope, on-time delivery.</li>
-              <li>Served as the primary liaison between technical teams, product managers, and business leadership; fostered strong client relationships and delivered transparent status updates, ensuring stakeholder buy-in and smooth adoption of new technologies and processes.</li>
-            </ul>
-          </div>
-
-          <!-- Role 3: Agile Lead -->
-          <div class="role-block">
-            <h3 class="role-title">Agile Program Lead, Data Engineering</h3>
-            <div class="role-dates">2022 — 2023 · 1 Year</div>
-            <ul class="role-list">
-              <li>Managed portfolio of 6+ concurrent data analytics and integration projects — owning road maps, release plans, and dependency tracking in JIRA while mentoring junior Scrum Masters and maintaining 100% on-time delivery.</li>
-              <li>Led FSQA Analytics Modernization — architecting a cross-platform data pipeline from SafetyChain into the Tyson Data Lake/Hub, delivering a Power BI-connected reporting solution from requirements through production deployment.</li>
-              <li>Spearheaded implementation of Agile and Scrum methodologies, leading to a 20% increase in development speed and team productivity.</li>
-              <li>Coordinated cross-functional teams (architecture, accounting controls, business data stewards, cyber-security, business stakeholders) — guaranteeing seamless collaboration and accelerating feature delivery by 30%.</li>
-            </ul>
-          </div>
-
-        </div>
-      </article>
-
-      <!-- MID-AMERICA COMPUTER CORPORATION -->
-      <article class="exp-card reveal reveal-delay-1">
-        <div class="exp-header">
-          <div class="company-logo" data-initials="MACC">
-            <img src="assets/logos/macc.png" alt="Mid-America Computer Corporation logo" />
-          </div>
-          <div class="exp-head-text">
-            <h2 class="exp-company">Mid-America Computer Corporation</h2>
-            <div class="exp-location">Omaha, NE</div>
-          </div>
-          <div class="exp-duration">
-            <div class="years">1 YEAR</div>
-            <div class="dates">2021 — 2022</div>
-          </div>
-        </div>
-
-        <div class="exp-body">
-          <div class="role-block">
-            <h3 class="role-title">Software Developer, SaaS Application</h3>
-            <div class="role-dates">2021 — 2022 · 1 Year</div>
-            <ul class="role-list">
-              <li>Developed and enhanced features across multiple software platforms using C# and SQL — collaborating with product managers and engineers to refine requirements, define acceptance criteria, and slice large initiatives into incremental releases.</li>
-              <li>Drove team's Agile maturity as Scrum Master and JIRA power-user — implementing JIRA workflows and leading full transition from Excel-based tracking to a structured scrum board, improving sprint visibility and delivery predictability.</li>
-            </ul>
-          </div>
-        </div>
-      </article>
-
-      <!-- CREIGHTON UNIVERSITY -->
-      <article class="exp-card reveal reveal-delay-2">
-        <div class="exp-header">
-          <div class="company-logo" data-initials="CU">
-            <img src="assets/logos/creighton.png" alt="Creighton University logo" />
-          </div>
-          <div class="exp-head-text">
-            <h2 class="exp-company">Creighton University</h2>
-            <div class="exp-location">Omaha, NE</div>
-          </div>
-          <div class="exp-duration">
-            <div class="years">2 YEARS</div>
-            <div class="dates">2019 — 2021</div>
-          </div>
-        </div>
-
-        <div class="exp-body">
-          <div class="role-block">
-            <h3 class="role-title">Business Systems Analyst / Project Manager</h3>
-            <div class="role-dates">2019 — 2021 · 2 Years</div>
-            <ul class="role-list">
-              <li>Led digital operations platform implementation — managing backlog, kanban boards, and requirements elicitation across senior management, vendors, and clients to streamline resource management and business operations.</li>
-              <li>Designed business roadmaps, process flows, and workflow diagrams (Visio) — analyzing operational gaps and recommending solutions that reduced manual work through automation and improved data quality across departments.</li>
-              <li>Drove end-user adoption of new digital tools by delivering training, facilitating Agile ceremonies, and leading UAT activities to ensure systems met established business requirements.</li>
-            </ul>
-          </div>
-        </div>
-      </article>
-
-    </div>
-
-    <!-- CORE SKILLS -->
-    <div class="skills-section">
-      <div class="section-header">
-        <div class="section-label">Core Skills</div>
-        <h2 class="section-title">Toolkit</h2>
+        <h3 class="exp-role">Technical Program Manager, Software Engineering</h3>
+        <ul class="exp-bullets">
+          <li>Led 8-stream Mainframe Modernization Program — coordinating IBM and multi-vendor upgrades to deliver a z/OS Connect API platform enabling bi-directional mainframe-to-enterprise integration (Palantir &amp; beyond)</li>
+          <li>Led end-to-end Generative AI initiative analyzing a 1M+ line mainframe codebase — securing cross-functional alignment across architects, engineering, and business to deploy AI Agents automating legacy processes at scale</li>
+          <li>Delivered $1.9M in hard savings by leading multiple software engineering teams and enhancements — managed full SDLC from scope definition, systems design, dev, test, production deployment, and post-mortem</li>
+          <li>Led TFS-to-GitLab migration of 27 Beef &amp; Pork web applications — eliminating deployment bottlenecks and aligning source control with enterprise standards</li>
+          <li>Stood up Monthly Business Review program for a 12-person team / 55-application portfolio — standardizing capacity planning, intake governance, and RACI frameworks to eliminate role ambiguity and improve delivery predictability</li>
+          <li>Shifted team focus from meeting-heavy to delivery-focused by reducing stand-up cadence, enabling self-managed JIRA workflows, and empowering Product Owners to lead backlog refinement</li>
+          <li>Bridged technical teams and business stakeholders; collaborated with VPs &amp; Directors to define goals, scope, and success metrics ensuring execution aligned with business needs</li>
+          <li>Authored bi-weekly sponsor business reviews and presented quarterly VP reviews for the Mainframe Modernization Program</li>
+        </ul>
       </div>
 
-      <div class="skills-grid">
-        <div class="skill-group reveal">
-          <h4>PM Tools</h4>
-          <div class="skill-pills">
-            <span class="skill-pill">JIRA</span>
-            <span class="skill-pill">MS Visio</span>
-            <span class="skill-pill">MS Project</span>
-            <span class="skill-pill">MS Excel</span>
-            <span class="skill-pill">Airtable</span>
-            <span class="skill-pill">Scrum &amp; Kanban</span>
-            <span class="skill-pill">Waterfall</span>
-            <span class="skill-pill">ServiceNow</span>
-            <span class="skill-pill">SharePoint Designer</span>
-          </div>
+      <div class="exp-block">
+        <div class="exp-header">
+          <span class="exp-period">2023 — 2025</span>
+          <span class="exp-company">Tyson Foods · Springdale, AR</span>
         </div>
-
-        <div class="skill-group reveal reveal-delay-1">
-          <h4>PM Skills</h4>
-          <div class="skill-pills">
-            <span class="skill-pill">Leadership &amp; Team Building</span>
-            <span class="skill-pill">Requirements Gathering</span>
-            <span class="skill-pill">Strategic Planning</span>
-            <span class="skill-pill">Executive Leadership</span>
-            <span class="skill-pill">Roadmap Execution</span>
-            <span class="skill-pill">Product Demos &amp; Staging</span>
-            <span class="skill-pill">Data Platform Engineering</span>
-            <span class="skill-pill">Feature Roadmap</span>
-            <span class="skill-pill">Incident Management</span>
-            <span class="skill-pill">KPI Definition &amp; Tracking</span>
-            <span class="skill-pill">Vendor Accountability</span>
-            <span class="skill-pill">Business Objects</span>
-          </div>
-        </div>
-
-        <div class="skill-group reveal reveal-delay-2">
-          <h4>Technologies</h4>
-          <div class="skill-pills">
-            <span class="skill-pill">AWS</span>
-            <span class="skill-pill">GCP</span>
-            <span class="skill-pill">Power BI</span>
-            <span class="skill-pill">Tableau</span>
-            <span class="skill-pill">SOAP / REST APIs</span>
-            <span class="skill-pill">Systems Architecture</span>
-            <span class="skill-pill">C#</span>
-            <span class="skill-pill">JSON</span>
-            <span class="skill-pill">JavaScript</span>
-            <span class="skill-pill">SQL Server</span>
-            <span class="skill-pill">DB2</span>
-            <span class="skill-pill">Supabase</span>
-            <span class="skill-pill">Figma</span>
-            <span class="skill-pill">GitLab</span>
-            <span class="skill-pill">GitHub</span>
-            <span class="skill-pill">MCP Servers</span>
-          </div>
-        </div>
-
-        <div class="skill-group reveal reveal-delay-3">
-          <h4>AI Platforms</h4>
-          <div class="skill-pills">
-            <span class="skill-pill">Google Vertex AI</span>
-            <span class="skill-pill">Claude</span>
-            <span class="skill-pill">Claude Code</span>
-          </div>
-        </div>
+        <h3 class="exp-role">Project Manager, Software Applications</h3>
+        <ul class="exp-bullets">
+          <li>Delivered $200K+ in cost savings by driving two AI/ML initiatives from concept to production — computer vision for meat thickness optimization and automated warehouse label verification — owning end-to-end integration</li>
+          <li>Drove RFID case-tagging rollout across 4 Tyson facilities to meet Chipotle's traceability mandate, securing $54M+ in annual revenue at risk and reinforcing Tyson's standing as a compliant, preferred supplier</li>
+          <li>Instituted project governance frameworks across complex programs — aligning engineering, product, and executive stakeholders on risk mitigation, change-control, and communication standards to drive on-scope, on-time delivery</li>
+          <li>Served as primary liaison between technical teams, product managers, and business leadership; fostered strong client relationships and delivered transparent status updates ensuring stakeholder buy-in and smooth adoption</li>
+        </ul>
       </div>
-    </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="experience.html">Experience</a>
-      <a href="education.html">Education</a>
-      <a href="projects.html">Projects</a>
+      <div class="exp-block">
+        <div class="exp-header">
+          <span class="exp-period">2022 — 2023</span>
+          <span class="exp-company">Tyson Foods · Springdale, AR</span>
+        </div>
+        <h3 class="exp-role">Agile Program Lead, Data Engineering</h3>
+        <ul class="exp-bullets">
+          <li>Managed portfolio of 6+ concurrent data analytics and integration projects — owning roadmaps, release plans, and dependency tracking in JIRA while mentoring junior Scrum Masters and maintaining 100% on-time delivery</li>
+          <li>Led FSQA Analytics Modernization — architecting a cross-platform data pipeline from SafetyChain into the Tyson Data Lake/Hub, delivering a Power BI-connected reporting solution from requirements through production deployment</li>
+          <li>Spearheaded Agile and Scrum methodology implementation, leading to a 20% increase in development speed and team productivity</li>
+          <li>Coordinated cross-functional teams (architecture, accounting controls, business data stewards, cybersecurity, business stakeholders) — accelerating feature delivery by 30%</li>
+        </ul>
+      </div>
+
+      <div class="exp-block">
+        <div class="exp-header">
+          <span class="exp-period">2021 — 2022</span>
+          <span class="exp-company">Mid-America Computer Corporation · Omaha, NE</span>
+        </div>
+        <h3 class="exp-role">Software Developer, SaaS Application</h3>
+        <ul class="exp-bullets">
+          <li>Developed and enhanced features across multiple software platforms using C# and SQL — collaborating with product managers and engineers to refine requirements, define acceptance criteria, and slice large initiatives into incremental releases</li>
+          <li>Drove team's Agile maturity as Scrum Master and JIRA power-user — implementing JIRA workflows and leading full transition from Excel-based tracking to a structured scrum board, improving sprint visibility and delivery predictability</li>
+        </ul>
+      </div>
+
+      <div class="exp-block">
+        <div class="exp-header">
+          <span class="exp-period">2019 — 2021</span>
+          <span class="exp-company">Creighton University · Omaha, NE</span>
+        </div>
+        <h3 class="exp-role">Business Systems Analyst / Project Manager</h3>
+        <ul class="exp-bullets">
+          <li>Led digital operations platform implementation — managing backlog, kanban boards, and requirements elicitation across senior management, vendors, and clients to streamline resource management and business operations</li>
+          <li>Designed business roadmaps, process flows, and workflow diagrams (Visio) — analyzing operational gaps and recommending solutions that reduced manual work through automation and improved data quality</li>
+          <li>Drove end-user adoption of new digital tools by delivering training, facilitating Agile ceremonies, and leading UAT activities to ensure systems met established business requirements</li>
+        </ul>
+      </div>
+
+      <div class="toolkit-section">
+        <h3 class="toolkit-label">Toolkit</h3>
+        <div class="toolkit-line"><strong>PM Tools</strong> — JIRA · MS Visio · MS Project · MS Excel · Airtable · Scrum &amp; Kanban · Waterfall · ServiceNow · SharePoint Designer</div>
+        <div class="toolkit-line"><strong>PM Skills</strong> — Leadership &amp; Team Building · Requirements Gathering · Strategic Planning · Executive Leadership · Roadmap Execution · KPI Definition · Incident Management · Vendor Accountability</div>
+        <div class="toolkit-line"><strong>Technologies</strong> — AWS · GCP · Power BI · Tableau · SOAP / REST APIs · Systems Architecture · C# · JSON · JavaScript · SQL Server · DB2 · Supabase · Figma · GitLab · GitHub</div>
+        <div class="toolkit-line"><strong>AI Platforms</strong> — Google Vertex AI · Claude · Claude Code · MCP Servers</div>
+      </div>
+
     </div>
+  </main>
+
+  <footer class="site-footer">
     <p>© <span id="year"></span> Shikhar Shrestha · Fort Worth, Texas</p>
   </footer>
 

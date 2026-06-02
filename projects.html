@@ -1,228 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Class projects and portfolio work by Shikhar Shrestha — MBA AI Product Management at University of Arkansas." />
-  <title>Class Projects | Shikhar Shrestha</title>
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23141414'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dominant-baseline='central' fill='%23E50914' font-family='Arial Black' font-size='22' font-weight='900'%3ES%3C/text%3E%3C/svg%3E" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Class projects and portfolio work by Shikhar Shrestha — MBA AI Product Management at University of Arkansas.">
+  <title>Projects — Shikhar Shrestha</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23111'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' dominant-baseline='central' fill='%23fff' font-family='Georgia' font-size='20' font-weight='400'%3ES%3C/text%3E%3C/svg%3E">
 </head>
 <body>
 
-  <!-- NAVIGATION -->
-  <nav class="nav">
+  <header class="site-nav">
     <div class="nav-inner">
-      <a href="index.html" class="nav-logo">SHIKHAR<span>.</span></a>
-      <button class="nav-toggle" aria-label="Menu">☰</button>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="experience.html">Experience</a></li>
-        <li><a href="education.html">Education</a></li>
-        <li><a href="projects.html">Projects</a></li>
-      </ul>
+      <a href="index.html" class="nav-brand">Shikhar Shrestha</a>
+      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+      <nav class="nav-links">
+        <a href="index.html#about">About</a>
+        <a href="experience.html">Experience</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="education.html">Education</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
     </div>
-  </nav>
+  </header>
 
-  <!-- PAGE HEADER -->
-  <section class="section" style="padding-top: 140px;">
-    <div class="section-header">
-      <div class="section-label reveal">The Reel</div>
-      <h1 class="section-title reveal reveal-delay-1">Projects</h1>
-      <p class="section-subtitle reveal reveal-delay-2">
-        Work and capstone projects
-      </p>
+  <main>
+    <div class="page-header">
+      <a href="index.html" class="back-link">← Back to home</a>
+      <h1>Projects</h1>
+      <p>Selected coursework and capstone projects from my MBA in AI Product Management &amp; Human-Centered Design at the University of Arkansas.</p>
     </div>
 
-    <!-- PROJECTS GRID -->
-    <div class="projects-grid">
+    <div class="project-list" style="border-top: 1px solid var(--border);">
 
-      <!-- PROJECT CARD 1 -->
-      <article class="project-card reveal">
-        <div class="project-media">
-          <!--
-            EDIT: replace src with your screenshot
-            Example: <img src="assets/projects/project-1.png" alt="Project One screenshot" />
-            For video: <video src="assets/projects/project-1.mp4" controls muted loop playsinline></video>
-          -->
-          <img src="assets/projects/Team Operating Model - Tyson Foods/TeamWorkflowOptimization.png" alt="Team Operating Model process workflow diagram" />
+      <div class="project-item">
+        <div class="project-meta">
+          <span class="project-tag">Built High Performing Teams · Tyson Foods</span>
         </div>
-        <div class="project-content">
-          <span class="project-tag">Built High Performing Teams</span>
-          <h3 class="project-title">Team Workflow Optimization</h3>
-          <p class="project-desc">
-            Shifted team focus from meetings to execution by implementing a new workflow and communication strategy. Resulted in high-performing, self-directed teams with improved team satisfaction.
-          </p>
-          <div class="project-tech">
-            <span class="tech-pill">MS Visio</span>
-            <span class="tech-pill">User Interviews</span>
-            <span class="tech-pill">Coaching</span>
-          </div>
-          <div class="project-actions">
-            <a href="projects/teamoperatingmodel.html" class="btn btn-primary">▶ View Project</a>
-          </div>
-        </div>
-      </article>
+        <h3><a href="projects/teamoperatingmodel.html">Team Workflow Optimization</a></h3>
+        <p>Redesigned team meeting cadence and implemented self-managed JIRA workflows, shifting focus from meetings to delivery execution. Resulted in high-performing, self-directed teams with improved satisfaction and velocity.</p>
+        <div class="project-tools">MS Visio · User Interviews · Coaching</div>
+      </div>
 
-      <!-- PROJECT CARD 2 -->
-      <article class="project-card reveal reveal-delay-1">
-        <div class="project-media">
-          <img src="assets/projects/HumanCenteredDesign - UniversityofArkansas/enterprise-design-thinking-practitioner.1.png" alt="IBM Enterprise Design Thinking Practitioner badge — Shared Fences Co project" />
+      <div class="project-item">
+        <div class="project-meta">
+          <span class="project-tag">Human-Centered Design · University of Arkansas</span>
         </div>
-        <div class="project-content">
-          <span class="project-tag">Human-Centered Design</span>
-          <h3 class="project-title">Shared Fences Co</h3>
-          <p class="project-desc">
-            Applied IBM Enterprise Design Thinking to map the homeowner-to-service-provider ecosystem, conduct customer discovery, and prototype a solution addressing why only 31% of homeowners find qualified pros "very easy" to locate.
-          </p>
-          <div class="project-tech">
-            <span class="tech-pill">Design Thinking</span>
-            <span class="tech-pill">Ecosystem Mapping</span>
-            <span class="tech-pill">Customer Discovery</span>
-          </div>
-          <div class="project-actions">
-            <a href="projects/humancentereddesign.html" class="btn btn-primary">▶ View Project</a>
-          </div>
-        </div>
-      </article>
+        <h3><a href="projects/humancentereddesign.html">Shared Fences Co</a></h3>
+        <p>Applied IBM Enterprise Design Thinking to map the homeowner-to-service-provider ecosystem, conducted customer discovery, and prototyped a solution addressing why only 31% of homeowners find qualified contractors "very easy" to locate.</p>
+        <div class="project-tools">Ecosystem Mapping · Customer Discovery · Prototype · IBM Design Thinking</div>
+      </div>
 
-      <!-- PROJECT CARD 3 -->
-      <article class="project-card reveal reveal-delay-2">
-        <div class="project-media">
-          <div class="project-placeholder" style="display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; padding:20px; gap:8px;">
-            <div class="project-placeholder-icon">AMZN</div>
-            <div style="font-size:0.8rem; letter-spacing:2px; text-transform:uppercase; color:var(--text-muted);">Financial Analysis</div>
-          </div>
+      <div class="project-item">
+        <div class="project-meta">
+          <span class="project-tag">Corporate Finance · University of Arkansas</span>
         </div>
-        <div class="project-content">
-          <span class="project-tag">Corporate Finance</span>
-          <h3 class="project-title">Amazon Financial Analysis</h3>
-          <p class="project-desc">
-            Computed company-wide and divisional WACCs for Amazon's three segments, applied EVA analysis to reveal that AWS alone drives $24.1B in value creation while both retail divisions destroy value, and delivered strategic recommendations for capital reallocation.
-          </p>
-          <div class="project-tech">
-            <span class="tech-pill">WACC</span>
-            <span class="tech-pill">EVA</span>
-            <span class="tech-pill">Divisional Valuation</span>
-          </div>
-          <div class="project-actions">
-            <a href="projects/corporatefinanceproject.html" class="btn btn-primary">▶ View Project</a>
-          </div>
-        </div>
-      </article>
+        <h3><a href="projects/corporatefinanceproject.html">Amazon — Divisional WACC &amp; EVA Analysis</a></h3>
+        <p>Computed company-wide and divisional WACCs for Amazon's three segments. EVA analysis revealed AWS alone drives $24.1B in value creation while both retail divisions destroy value. Delivered strategic capital reallocation recommendations.</p>
+        <div class="project-tools">WACC · EVA · Divisional Valuation</div>
+      </div>
 
-      <!-- PROJECT CARD 4 -->
-      <article class="project-card reveal reveal-delay-3">
-        <div class="project-media">
-          <div class="project-placeholder" style="display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; padding:20px; gap:8px;">
-            <div class="project-placeholder-icon" style="font-size:1.6rem;">WOW vs COL</div>
-            <div style="font-size:0.75rem; letter-spacing:2px; text-transform:uppercase; color:var(--text-muted);">Price Gouging Analysis</div>
-          </div>
+      <div class="project-item">
+        <div class="project-meta">
+          <span class="project-tag">Supply Chain · Accounting · University of Arkansas</span>
         </div>
-        <div class="project-content">
-          <span class="project-tag">Supply Chain · Accounting Analysis</span>
-          <h3 class="project-title">Australian Price Gouging Case Study</h3>
-          <p class="project-desc">
-            Investigated Woolworths Group's record FY23 profits using five years of comparative financial data against Coles, determined profits stemmed from volume growth rather than margin expansion, and authored a C-suite disclosure strategy memo and press release advising proactive investor communication.
-          </p>
-          <div class="project-tech">
-            <span class="tech-pill">Ratio Analysis</span>
-            <span class="tech-pill">Disclosure Strategy</span>
-            <span class="tech-pill">Investor Relations</span>
-          </div>
-          <div class="project-actions">
-            <a href="projects/PriceGougingCaseStudy.html" class="btn btn-primary">▶ View Project</a>
-          </div>
-        </div>
-      </article>
+        <h3><a href="projects/PriceGougingCaseStudy.html">Woolworths Australian Price Gouging Case Study</a></h3>
+        <p>Investigated Woolworths' record FY23 profits using five years of comparative data against Coles. Determined profits stemmed from volume growth, not margin expansion. Authored a C-suite disclosure strategy memo advising proactive investor communication.</p>
+        <div class="project-tools">Ratio Analysis · Disclosure Strategy · Investor Relations</div>
+      </div>
 
-      <!-- PROJECT CARD 5 -->
-      <article class="project-card reveal reveal-delay-4">
-        <div class="project-media">
-          <div class="project-placeholder" style="display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; padding:20px; gap:8px;">
-            <div class="project-placeholder-icon" style="font-size:1.4rem;">GOLD</div>
-            <div style="font-size:0.75rem; letter-spacing:2px; text-transform:uppercase; color:var(--text-muted);">Supply Chain Optimization</div>
-          </div>
+      <div class="project-item">
+        <div class="project-meta">
+          <span class="project-tag">Operations · Supply Chain · University of Arkansas</span>
         </div>
-        <div class="project-content">
-          <span class="project-tag">Supply Chain · Operations</span>
-          <h3 class="project-title">GOLD Meals — Supply Chain Optimization</h3>
-          <p class="project-desc">
-            Identified $866K in annual savings for a regional meal-kit startup by applying EOQ modeling across four western states and designing a centralized distribution network. Delivered a 3-phase national growth roadmap with a phased insourcing strategy projected to reduce per-unit fulfillment costs by 73%.
-          </p>
-          <div class="project-tech">
-            <span class="tech-pill">EOQ</span>
-            <span class="tech-pill">Inventory Optimization</span>
-            <span class="tech-pill">Growth Strategy</span>
-          </div>
-          <div class="project-actions">
-            <a href="projects/goldmealcaseanalysis.html" class="btn btn-primary">▶ View Project</a>
-          </div>
-        </div>
-      </article>
+        <h3><a href="projects/goldmealcaseanalysis.html">GOLD Meals — Distribution Network Design</a></h3>
+        <p>Identified $866K in annual savings for a regional meal-kit startup using EOQ modeling across four western states. Designed a centralized distribution network with a 3-phase national growth roadmap projecting 73% reduction in per-unit fulfillment costs.</p>
+        <div class="project-tools">EOQ Modeling · Inventory Optimization · Growth Strategy</div>
+      </div>
 
-      <!-- PROJECT CARD 6 -->
-      <article class="project-card reveal reveal-delay-4">
-        <div class="project-media">
-          <div class="project-placeholder" style="display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; padding:20px; gap:8px;">
-            <div class="project-placeholder-icon" style="font-size:1.4rem;">HSY</div>
-            <div style="font-size:0.75rem; letter-spacing:2px; text-transform:uppercase; color:var(--text-muted);">Valuation Analysis</div>
-          </div>
+      <div class="project-item">
+        <div class="project-meta">
+          <span class="project-tag">Financial Accounting · Valuation · University of Arkansas</span>
         </div>
-        <div class="project-content">
-          <span class="project-tag">Financial Accounting · Valuation</span>
-          <h3 class="project-title">Hershey Company — HSY Analysis</h3>
-          <p class="project-desc">
-            Built a full ROPI intrinsic valuation model for The Hershey Company using 10 years of audited financials and a 5-year forecast, estimating a WACC of 5.61% and an intrinsic value of $301.16 per share. Concluded HSY was significantly undervalued at its $168.52 market price, with all sensitivity scenarios confirming a 41–46% discount to fair value.
-          </p>
-          <div class="project-tech">
-            <span class="tech-pill">ROPI Model</span>
-            <span class="tech-pill">WACC</span>
-            <span class="tech-pill">Financial Forecasting</span>
-          </div>
-          <div class="project-actions">
-            <a href="projects/financialaccountingproject.html" class="btn btn-primary">▶ View Project</a>
-          </div>
-        </div>
-      </article>
+        <h3><a href="projects/financialaccountingproject.html">Hershey Company — ROPI Intrinsic Valuation</a></h3>
+        <p>Built a full ROPI intrinsic valuation model using 10 years of audited financials and a 5-year forecast. Estimated WACC of 5.61% and intrinsic value of $301.16/share — concluding HSY was 41–46% undervalued at its $168.52 market price across all sensitivity scenarios.</p>
+        <div class="project-tools">ROPI Model · WACC · Financial Forecasting</div>
+      </div>
 
-      <!-- PROJECT CARD 7 -->
-      <article class="project-card reveal reveal-delay-4">
-        <div class="project-media">
-          <div class="project-placeholder" style="display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; padding:20px; gap:8px;">
-            <div class="project-placeholder-icon" style="font-size:1.4rem;">ABNB</div>
-            <div style="font-size:0.75rem; letter-spacing:2px; text-transform:uppercase; color:var(--text-muted);">Business Model Analysis</div>
-          </div>
+      <div class="project-item">
+        <div class="project-meta">
+          <span class="project-tag">Economics · Platform Strategy · University of Arkansas</span>
         </div>
-        <div class="project-content">
-          <span class="project-tag">Economics · Platform Strategy</span>
-          <h3 class="project-title">Airbnb Business Model Analysis</h3>
-          <p class="project-desc">
-            Analyzed Airbnb's asset-light platform model through core economics frameworks — decomposing its dual-sided revenue structure, fixed vs. variable cost dynamics, price elasticity across five demand segments, and network-effect moat. Concluded the model structurally outperforms traditional hospitality on margins and recommended long-term stays and corporate travel expansion to reduce dependence on highly elastic leisure demand.
-          </p>
-          <div class="project-tech">
-            <span class="tech-pill">Platform Economics</span>
-            <span class="tech-pill">Price Elasticity</span>
-            <span class="tech-pill">Business Model Analysis</span>
-          </div>
-          <div class="project-actions">
-            <a href="projects/economicsanalysisproject.html" class="btn btn-primary">▶ View Project</a>
-          </div>
-        </div>
-      </article>
+        <h3><a href="projects/economicsanalysisproject.html">Airbnb Business Model Analysis</a></h3>
+        <p>Analyzed Airbnb's asset-light platform model through core economics frameworks — dual-sided revenue structure, fixed vs. variable cost dynamics, price elasticity across five demand segments, and network-effect moat. Recommended corporate travel expansion to reduce leisure demand dependence.</p>
+        <div class="project-tools">Platform Economics · Price Elasticity · Business Model Strategy</div>
+      </div>
 
     </div>
+  </main>
 
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="experience.html">Experience</a>
-      <a href="education.html">Education</a>
-      <a href="projects.html">Projects</a>
-    </div>
+  <footer class="site-footer">
     <p>© <span id="year"></span> Shikhar Shrestha · Fort Worth, Texas</p>
   </footer>
 

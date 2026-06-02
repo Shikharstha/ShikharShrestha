@@ -1,43 +1,46 @@
-// Navigation scroll effect
-const nav = document.querySelector('.nav');
-if (nav) {
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) nav.classList.add('scrolled');
-    else nav.classList.remove('scrolled');
-  });
-}
-
 // Mobile nav toggle
 const toggle = document.querySelector('.nav-toggle');
-const links = document.querySelector('.nav-links');
-if (toggle && links) {
+const navLinks = document.querySelector('.nav-links');
+
+if (toggle && navLinks) {
   toggle.addEventListener('click', () => {
-    links.classList.toggle('open');
-    toggle.textContent = links.classList.contains('open') ? '✕' : '☰';
+    const isOpen = navLinks.classList.toggle('open');
+    toggle.textContent = isOpen ? '✕' : '☰';
+    document.body.style.overflow = isOpen ? 'hidden' : '';
   });
-  // close on link click (mobile)
-  links.querySelectorAll('a').forEach(a =>
+
+  navLinks.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => {
-      links.classList.remove('open');
+      navLinks.classList.remove('open');
       toggle.textContent = '☰';
-    })
-  );
+      document.body.style.overflow = '';
+    });
+  });
+
+  // Close on outside click
+  document.addEventListener('click', e => {
+    if (navLinks.classList.contains('open') && !navLinks.contains(e.target) && e.target !== toggle) {
+      navLinks.classList.remove('open');
+      toggle.textContent = '☰';
+      document.body.style.overflow = '';
+    }
+  });
 }
 
-// Company logo fallback — if image fails to load, show initials
-document.querySelectorAll('.company-logo img').forEach(img => {
-  img.addEventListener('error', () => {
-    const parent = img.parentElement;
-    const fallback = parent.getAttribute('data-initials') || '';
-    parent.innerHTML = `<span class="company-logo-fallback">${fallback}</span>`;
-  });
-});
+// Active nav link on scroll (single-page only)
+const sections = document.querySelectorAll('section[id]');
+const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
 
-// Highlight current page in nav
-const path = window.location.pathname.split('/').pop() || 'index.html';
-document.querySelectorAll('.nav-links a').forEach(a => {
-  const href = a.getAttribute('href');
-  if (href === path || (path === '' && href === 'index.html')) {
-    a.classList.add('active');
-  }
-});
+if (sections.length && navAnchors.length) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navAnchors.forEach(a => a.classList.remove('active'));
+        const active = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-30% 0px -65% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+}
