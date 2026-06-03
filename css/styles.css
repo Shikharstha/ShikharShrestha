@@ -135,12 +135,12 @@ main {
 }
 
 .hero-photo {
-  width: 108px;
-  height: 108px;
-  border-radius: 50%;
+  width: 140px;
+  height: 175px;
+  border-radius: 6px;
   overflow: hidden;
   flex-shrink: 0;
-  border: 2px solid var(--border);
+  border: 1px solid var(--border);
   background: #e5e7eb;
 }
 .hero-photo img {
@@ -187,7 +187,6 @@ main {
    ========================================================================== */
 .content-section {
   padding: 56px 0;
-  border-top: 1px solid var(--border);
 }
 
 .content-section h2 {
@@ -599,7 +598,11 @@ main {
     flex-direction: column;
     text-align: center;
     padding: 52px 0 44px;
-    gap: 20px;
+    gap: 24px;
+  }
+  .hero-photo {
+    width: 120px;
+    height: 150px;
   }
   .hero-text h1 { font-size: 1.85rem; }
 
