@@ -122,6 +122,8 @@ main {
   max-width: var(--max-w);
   margin: 0 auto;
   padding: 0 var(--pad-x);
+  position: relative;
+  z-index: 2;
 }
 
 /* ==========================================================================
@@ -180,11 +182,11 @@ main {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 9999;
+  z-index: 1;
   background-image:
     linear-gradient(rgba(125,211,252,0.45) 1px, transparent 1px),
     linear-gradient(90deg, rgba(125,211,252,0.45) 1px, transparent 1px);
-  background-size: 44px 44px;
+  background-size: 30px 30px;
   opacity: 0;
   transition: opacity 0.35s ease;
   -webkit-mask-image: radial-gradient(circle 200px at var(--mx, -999px) var(--my, -999px), black 20%, transparent 100%);
@@ -489,6 +491,8 @@ main {
   border-top: 1px solid var(--border);
   font-size: 0.8rem;
   color: var(--faint);
+  position: relative;
+  z-index: 2;
 }
 
 /* ==========================================================================
