@@ -114,9 +114,14 @@ gridEl.className = 'mouse-grid';
 document.body.appendChild(gridEl);
 
 document.addEventListener('mousemove', e => {
-  gridEl.style.setProperty('--mx', e.clientX + 'px');
-  gridEl.style.setProperty('--my', e.clientY + 'px');
-  gridEl.classList.add('active');
+  const overChrome = e.target.closest('.site-nav, .site-footer');
+  if (overChrome) {
+    gridEl.classList.remove('active');
+  } else {
+    gridEl.style.setProperty('--mx', e.clientX + 'px');
+    gridEl.style.setProperty('--my', e.clientY + 'px');
+    gridEl.classList.add('active');
+  }
 });
 
 document.addEventListener('mouseleave', () => {

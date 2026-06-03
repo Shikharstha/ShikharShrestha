@@ -182,8 +182,8 @@ main {
   pointer-events: none;
   z-index: 9999;
   background-image:
-    linear-gradient(rgba(17,17,17,0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(17,17,17,0.07) 1px, transparent 1px);
+    linear-gradient(rgba(125,211,252,0.45) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(125,211,252,0.45) 1px, transparent 1px);
   background-size: 44px 44px;
   opacity: 0;
   transition: opacity 0.35s ease;
