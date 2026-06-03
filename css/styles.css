@@ -159,6 +159,11 @@ main {
   color: var(--text);
 }
 
+.scramble-char {
+  color: var(--faint);
+  font-style: normal;
+}
+
 .hero-subtitle {
   font-size: 0.95rem;
   color: var(--muted);
