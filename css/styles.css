@@ -382,6 +382,26 @@ main {
   letter-spacing: 0.3px;
 }
 
+.project-pdfs {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.pdf-link {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #1e3a8a;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.pdf-link:hover {
+  color: #1e3a8a;
+  text-decoration: underline;
+}
+
 /* ==========================================================================
    Education
    ========================================================================== */
