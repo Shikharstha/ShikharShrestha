@@ -135,19 +135,20 @@ main {
 }
 
 .hero-photo {
-  width: 140px;
-  height: 175px;
-  border-radius: 6px;
+  width: 200px;
+  height: 250px;
+  border-radius: 8px;
   overflow: hidden;
   flex-shrink: 0;
   border: 1px solid var(--border);
   background: #e5e7eb;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
 }
 .hero-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 8%;
 }
 
 .hero-text h1 {
@@ -601,8 +602,8 @@ main {
     gap: 24px;
   }
   .hero-photo {
-    width: 120px;
-    height: 150px;
+    width: 160px;
+    height: 200px;
   }
   .hero-text h1 { font-size: 1.85rem; }
 
