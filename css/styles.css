@@ -165,6 +165,33 @@ main {
   font-style: normal;
 }
 
+/* Floating name */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+[data-scramble].floating {
+  display: inline-block;
+  animation: float 3.6s ease-in-out infinite;
+}
+
+/* Mouse-follow grid */
+.mouse-grid {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  background-image:
+    linear-gradient(rgba(17,17,17,0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17,17,17,0.07) 1px, transparent 1px);
+  background-size: 44px 44px;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  -webkit-mask-image: radial-gradient(circle 200px at var(--mx, -999px) var(--my, -999px), black 20%, transparent 100%);
+  mask-image: radial-gradient(circle 200px at var(--mx, -999px) var(--my, -999px), black 20%, transparent 100%);
+}
+.mouse-grid.active { opacity: 1; }
+
 .hero-subtitle {
   font-size: 0.95rem;
   color: var(--muted);

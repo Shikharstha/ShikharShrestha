@@ -44,7 +44,7 @@ if (sections.length && navAnchors.length) {
   sections.forEach(s => observer.observe(s));
 }
 
-// Text scramble — character cycling effect (like thinkingmachines.ai)
+// ── Text scramble ────────────────────────────────────────────────────────────
 class TextScramble {
   constructor(el) {
     this.el = el;
@@ -88,7 +88,9 @@ class TextScramble {
     }
     this.el.innerHTML = output;
     if (complete === this.queue.length) {
-      this.el.innerHTML = this.queue.map(q => q.to).join('');
+      // Restore plain text then start float animation
+      this.el.textContent = this.queue.map(q => q.to).join('');
+      this.el.classList.add('floating');
       this.resolve();
     } else {
       this.frameRequest = requestAnimationFrame(this.update);
@@ -97,7 +99,7 @@ class TextScramble {
   }
 }
 
-// Apply scramble to hero h1 on load
+// Apply scramble to hero h1, then float
 const scrambleEl = document.querySelector('[data-scramble]');
 if (scrambleEl) {
   const text = scrambleEl.textContent.trim();
@@ -105,3 +107,18 @@ if (scrambleEl) {
   const fx = new TextScramble(scrambleEl);
   setTimeout(() => fx.setText(text), 200);
 }
+
+// ── Mouse-follow grid ────────────────────────────────────────────────────────
+const gridEl = document.createElement('div');
+gridEl.className = 'mouse-grid';
+document.body.appendChild(gridEl);
+
+document.addEventListener('mousemove', e => {
+  gridEl.style.setProperty('--mx', e.clientX + 'px');
+  gridEl.style.setProperty('--my', e.clientY + 'px');
+  gridEl.classList.add('active');
+});
+
+document.addEventListener('mouseleave', () => {
+  gridEl.classList.remove('active');
+});
