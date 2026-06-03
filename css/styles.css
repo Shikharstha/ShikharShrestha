@@ -177,15 +177,13 @@ main {
   animation: float 3.6s ease-in-out infinite;
 }
 
-/* Mouse-follow grid */
+/* Mouse-follow grid — dashed SVG tile */
 .mouse-grid {
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 1;
-  background-image:
-    linear-gradient(rgba(125,211,252,0.45) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(125,211,252,0.45) 1px, transparent 1px);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30'%3E%3Cline x1='30' y1='0' x2='30' y2='30' stroke='rgba(125,211,252,0.55)' stroke-width='1' stroke-dasharray='4 4'/%3E%3Cline x1='0' y1='30' x2='30' y2='30' stroke='rgba(125,211,252,0.55)' stroke-width='1' stroke-dasharray='4 4'/%3E%3C/svg%3E");
   background-size: 30px 30px;
   opacity: 0;
   transition: opacity 0.35s ease;
